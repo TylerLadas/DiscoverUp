@@ -5,27 +5,27 @@ To build a local event/weather dashboard that will run in the browser and featur
 
 ## User Story
 AS A event goer
-I WANT to see local events and the weather outlook for a given date
-SO THAT I can choose an event that interests me on a date with a favorable forecast
+I WANT to see local events and nearby popular restaurants
+SO THAT I can choose an event that interests me and select a nearby restaurant
 
 ## Acceptance Criteria
 GIVEN a event/weather dashboard with form inputs
 WHEN I search for a city and date
-THEN I am presented with top events and  conditions for that city and date, and that info is added to the search history
-WHEN I view events for that city and date
-Then I am presented with the city name, the date, event summaries, descriptiom, price and start-time 
-WHEN I view weather conditions for that city and date
-THEN I am presented with an icon representation of weather conditions, the temperature, 
-WHEN I click on a city and date in the search history
-THEN I am again presented with events and weather conditions for that city and date
+THEN I am presented with top events for that city and restaurants near the event postal code, and that info is added to the search history
+WHEN I view events for that city
+Then I am presented with the city name, event name, url, image, the start-date, end-date, event descriptiom, price range, event-type 
+WHEN I view nearby restaurants
+THEN I am presented with name, url, address, rating, price range, phone number, category  
+WHEN I click on a city in the search history
+THEN I am again presented with events and nearby restaurants for that city
 
 ## Built With
 * HTML
 * CSS
 * JavaScript
-* 
-* EventBrite
-* OpenWeather One Call API
+* Tailwind CSS
+* Ticketmaster Discovery API
+* Yelp Fusion API
 
 ## Website
 
@@ -33,6 +33,5 @@ THEN I am again presented with events and weather conditions for that city and d
 ## Contribution
 by Tyler Ladas, Dennis de Guzman, Thomas Habtemariam , Lakyn Felix
 
-group memebers : Tyler ladas, Dennis de Guzman, Thomas Habtemariam , Lakyn Felix.
 
 
