@@ -41,7 +41,7 @@ savedBtn.addEventListener("click", handler)
 savedContainer.appendChild(savedBtn);
 };
 
-// Loop through array on pag load and render saved buttons
+// Loop through array on page load and render saved buttons
 searchArray.forEach(function(item) {
     createButton(item)
 }); 
@@ -49,10 +49,22 @@ searchArray.forEach(function(item) {
 // Event listeners
 
 // submit/search button listener
-
+searchForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    cityValue = searchCity.value;
+    if (searchCity.value === "") {
+        alert("Please enter a city name!")
+        return
+    }
+    fetchCurrent(cityValue);
+    setStorage();
+    JSON.parse(localStorage.getItem('saved'))
+    createButton(searchCity.value);
+    searchCity.value = "";
+});
 
 // saved button listener
-
+$(".savedBtn").click(handler);
 
 // clear search button listener
 createButton.addEventListener('click', function() {
