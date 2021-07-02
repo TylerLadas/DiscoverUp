@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hear Me Out</title>
+</head>
+<body>
+    <div >
+        <input type="text" id="searchCity" value="City"/>
+        <span> <input type="text" id="searchZip" value="H1H1H1"/> </span>   
+    </div>
+    <div>
+        Radius:
+        <select id="searchRadius">
+            <option value="50">Within 50km</option>
+            <option value="20">Within 20km</option>
+            <option value="5">Within 5km</option>
+        </select>
+    </div>
+    <button onclick="lookUp()">Search</button>
+    <div>
+        <h2>Events Near You</h1>
+    </div>
+    <div class=events id="responseEvents">
+        <ul>
+            <li>Start here</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Restaurants Around The Venue</h2>
+    </div>
+    <div class=restos id="responseRestos">
+        <ul>
+            <li>Start Here</li>
+        </ul>
+    </div>
+    <!-- Script source file/directory -->
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>
