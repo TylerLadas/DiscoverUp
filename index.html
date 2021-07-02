@@ -6,94 +6,154 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Tailwindscss Imported CDN -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.0.0-insiders.4a070ac/tailwind.min.css">
+
+  <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
   <title>UpComing Events & Restuarants Near You</title>
 </head>
+
 <!-- Testing the body property to check the Tailwind framework is responding -->
-<body class="bg-black text-gray-100">
-  
-  <div>
-    <div>
-      <div>
-        <h1>Discover UpComing<span> Events & Restuarants</span> <span>Near You</span></h1>
-      </div>
-    </div>
+<body class="bg-gray-400 text-gray-900">
+
+  <!-- Header Note on Heading section -->
+  <div class=" flex-auto flex-wrap my-auto py-5 bg-gray-900  text-white ">
+    <h1 class="px-3 pb-5 text-3xl font-bold text-green-600 ">DiscoverUp</h1>
+    <p class="font-sans ... text-2xl px-10 text-center">Find Cool Events & Hot Restuarants in your area</p> 
+    <p class="py-2 font-sans ... text-green-600 italic px-5  text-x text-center">Get notified with us on upcoming shows, music, concerts, events and also pick hot Restuarants near you  </p>
   </div>
 
-  <div>
-    <form>
-        <label for="html">Discover Now</label><br>
-        <input type="text"  paceholder="Postal code here" name="postal-code">
-        <button>Clear</button>
-        <button>Search</button>
-    </form>
+  <!-- "LOGO and Search bar" section -->
+  <div class=" flex-auto flex-wrap w-100%  bg-white">
+    <h1 class="text-center text-4xl py-2">Discover Coming<span class="italic"> Events & Restuarants</span></h1>
+    <div class="flex-auto flex-wrap pb-2 pt-2 grid justify-items-center">
+      <form id="" class=" pr-1 py-1 border-2 rounded-md border-green-600 ">
+        <input id="" class=" pr-20 px-1   "type="text" placeholder="Postal code here" name="postal-code">
+        <button class="bg-green-600 rounded-md px-5 py-1">Search</button>
+      </form>
+      <div></div>
+    </div>
   </div>
-  <div>
+     
+  <!-- "Event Near You" section -->
+  <section class="flex-auto flex-wrap px-20">
     <div>
+      <h2 class="text-2xl text-center pt-10 pb-2 border-b-4 border-green-600">Events Near You</h2>
+    </div>
 
-      <div>
-        <div>
-          <h2>Event Near You</h2>
-        </div>
-        <div>
-          <img src="/">
-          <p>June 30, 2021 08:45 PM EST</p>
-          <div>
-            <p>Lorem Ipsum 1 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            <button>More Info</button>
-          </div>
-        </div>
-        <div>
-          <img src="/">
-          <p>June 30, 2021 08:45 PM EST</p>
-          <div>
-            <p>Lorem Ipsum 2 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            <button>More Info</button>
-          </div>
-        </div>
-        <div>
-          <img src="/">
-          <p>June 30, 2021 08:45 PM EST</p>
-          <div>
-            <p>Lorem Ipsum 3 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            <button>More Info</button>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div>
-          <h2>Resturaunts Near You</h2>
-        </div>
-        <div>
-          <img src="/">
-          <p>June 30, 2021 08:45 PM EST</p>
-          <div>
-            <p>Lorem Ipsum 4 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            <button>More Info</button>
-          </div>
-        </div>
-        <div>
-          <img src="/">
-          <p>June 30, 2021 08:45 PM EST</p>
-          <div>
-            <p>Lorem Ipsum 5 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            <button>More Info</button>
-          </div>
-        </div>
-        <div>
-          <img src="/">
-          <p>June 30, 2021 08:45 PM EST</p>
-          <div>
-            <p>Lorem Ipsum 6 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            <button>More Info</button>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- "fetched data here" section -  TicketMAster Response -->
     <div>
-      <h2>Testimonials</h2>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+
+
+    <!-- First Event Details -->
+    <main class="flex flex-col pt-5"> 
+      <div>
+        <!-- <img  class="w-2/6"src="assets/images/Event 1.jpeg">
+        <p>June 30, 2021 08:45 PM EST</p>
+        <div>
+          <p class="italic">Don't miss the latest from Downtown Ottawa Get free access to exclusive 
+              deals, events, news, and more. input input You are agreeing to Parkbench 
+              Terms of Use
+          </p>
+          <button class="bg-green-600 rounded-md px-5 py-1">Read More</button>
+        </div> -->
+      </div>
+
+
+      <!-- Second Event Details -->
+      <div>
+        <!-- <img class="w-2/6" src="assets/images/Event 2.jpeg">
+        <p>July 03, 2021 08:00 AM EST</p>
+        <div>
+          <p class="italic justify-around">2021-07-03 July, 8:00 PM AM - 1 Blvd du Casino - Theatre du Casino du Lac 
+            Leamy - Quebec - Gerry Dee: Alone. On a Stage. At Laugh Gatineau-Ottawa.
+          </p>
+          <button class="bg-green-600 rounded-md px-5 py-1">More Info</button>
+        </div> -->
+      </div>
+
+      
+        <!-- Third Event Details -->
+      <div>
+        <!-- <img class="w-2/6" src="assets/images/Event 3.jpeg">
+        <p>June 30, 2021 08:45 PM EST</p>
+        <div>
+          <p class="italic">2021-07-03 July, 8:00 PM AM - 1 Blvd du Casino - Theatre du Casino du Lac 
+              Leamy - Quebec - Gerry Dee: Alone. On a Stage. At Laugh Gatineau-Ottawa.
+          </p>
+          <button class="bg-green-600 rounded-md px-5 py-1">More Info</button>
+        </div>
+      </div> -->
+    </div>
+  </main>
+
+
+  <!-- "fetched data here" section -  Yelp Response -->
+  <div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
-  <Script></script>
+
+    <!-- "Restuarant Near You " response content layout section -->
+  <main class="flex-auto flex-wrap px-20">
+    <div>
+      <h2 class="text-2xl text-center pt-10 pb-2 border-b-4 border-green-600">Restuarants Near You</h2>
+    </div>
+
+
+    <!-- First Restuarant Details -->
+    <div class="flex flex-col pt-5"> 
+      <!-- <div>
+        <img  class="w-2/6"src="assets/images/Event 1.jpeg">
+        <p>June 30, 2021 08:45 PM EST</p>
+        <div>
+          <p class="italic">Don't miss the latest from Downtown Ottawa Get free access to exclusive 
+              deals, events, news, and more. input input You are agreeing to Parkbench 
+              Terms of Use
+          </p>
+          <button class="bg-green-600 rounded-md px-5 py-1">Read More</button>
+        </div> -->
+      </div>
+
+
+      <!-- Second Restuarant Details -->
+      <div>
+        <!-- <img class="w-2/6" src="assets/images/Event 2.jpeg">
+        <p>July 03, 2021 08:00 AM EST</p>
+        <div>
+          <p class="italic justify-around">2021-07-03 July, 8:00 PM AM - 1 Blvd du Casino - Theatre du Casino du Lac 
+            Leamy - Quebec - Gerry Dee: Alone. On a Stage. At Laugh Gatineau-Ottawa.
+          </p>
+          <button class="bg-green-600 rounded-md px-5 py-1">More Info</button>
+        </div> -->
+      </div>
+
+      
+        <!-- Third Restuarant Details -->
+      <div>
+        <!-- <img class="w-2/6" src="assets/images/Event 3.jpeg">
+        <p>June 30, 2021 08:45 PM EST</p>
+        <div>
+          <p class="italic">2021-07-03 July, 8:00 PM AM - 1 Blvd du Casino - Theatre du Casino du Lac 
+              Leamy - Quebec - Gerry Dee: Alone. On a Stage. At Laugh Gatineau-Ottawa.
+          </p>
+          <button class="bg-green-600 rounded-md px-5 py-1">More Info</button>
+        </div>
+      </div> -->
+    </div>
+  </main>
+
+  <button class="bg-green-600 text-center  rounded-md px-5 py-1">Clear</button>
+     
+  <div>
+    <h2 class="text-2xl text-center pt-10 pb-2 border-b-4 border-green-600">Testimonials</h2>
+  </div>
+
+   
+  <Script>src="./assets/js/script.js"</script>
 </body>
 </html>
