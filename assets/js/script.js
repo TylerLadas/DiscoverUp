@@ -1,15 +1,20 @@
-var citySearch = document.getElementById('searchCity').value;
+var citySearch = document.getElementById('searchCity');
+var searchBtn = document.getElementById("search");
+var searchForm = document.getElementById("searchForm");
+var savedContainer = document.getElementById("savedContainer");
+var clearBtn = document.getElementById("clearBtn");
+let cityValue;
 // var zipSearch  = document.getElementById('searchZip').value;
 // var offSearch  = document.getElementById('searchRadius').value;
 
 //Execute search api for Events & Restos
-function lookUp() {
+function lookUp(city) {
 
 var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=';
-var apiEvent = 'https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events.json?';
+var apiEvent = 'https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events.json?size=5&';
 var eApiKey  = 'LVPi9sXqgdQ58cdxQJV9G5220uffRerh';
 
-fetch(apiEvent + 'city=' + citySearch + '&apikey=' + eApiKey) 
+fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey) 
     
     .then(function(response) {
 
@@ -125,76 +130,78 @@ fetch(apiEvent + 'city=' + citySearch + '&apikey=' + eApiKey)
 
     // });     
 
-    // Global variables
+// Global variables
 
 // Array variable
-// let searchArray;
+let searchArray;
 
 // // Check local storage for saved array items, if present array = localstorage if empty  array = []
-// if (localStorage.getItem('saved')) {
-//     searchArray = JSON.parse(localStorage.getItem('saved'));
-// } else {
-//     searchArray = [];
-// }
+if (localStorage.getItem('saved')) {
+    searchArray = JSON.parse(localStorage.getItem('saved'));
+} else {
+    searchArray = [];
+}
 
-// // Create local storage key to hold array items
-// localStorage.setItem('saved', JSON.stringify(searchArray));
+// Create local storage key to hold array items
+localStorage.setItem('saved', JSON.stringify(searchArray));
 
-// // Declare variable to hold parsed local storage data
-// const savedSearches = JSON.parse(localStorage.getItem('saved'));
+// Declare variable to hold parsed local storage data
+const savedSearches = JSON.parse(localStorage.getItem('saved'));
 
-// // Create function to push new values to array and then set to local storage
-// //Confirm variable names to extract value from
-// function setStorage() {
-//     searchArray.push(search.value) 
-//     localStorage.setItem('saved', JSON.stringify(searchArray))   
-// };
+// Create function to push new values to array and then set to local storage
+//Confirm variable names to extract value from
+function setStorage() {
+    searchArray.push(citySearch.value) 
+    localStorage.setItem('saved', JSON.stringify(searchArray))   
+};
 
-// // Handler function for click events
-// function handler(event) {
-//     event.preventDefault;
-//     // add location values
-//     // run fetch function
-// }
+// Handler function for click events
+function handler(event) {
+    event.preventDefault;
+    // add location values
+    // run fetch function
+}
 
-// // Function to dynamically create new local storage items (buttons?)
-// function createButton(text) {
-// let savedBtn = document.createElement("button");
-// savedBtn.textContent = text
-// savedBtn.className = "savedBtn";
-// savedBtn.setAttribute("type", "submit")
-// savedBtn.setAttribute("value", text);
-// savedBtn.addEventListener("click", handler)
-// savedContainer.appendChild(savedBtn);
-// };
+// Function to dynamically create new local storage items (buttons?)
+function createButton(text) {
+let savedBtn = document.createElement("button");
+savedBtn.textContent = text
+savedBtn.className = "savedBtn";
+savedBtn.setAttribute("type", "submit")
+savedBtn.setAttribute("value", text);
+savedBtn.addEventListener("click", handler)
+savedContainer.appendChild(savedBtn);
+};
 
-// // Loop through array on page load and render saved buttons
-// searchArray.forEach(function(item) {
-//     createButton(item)
-// }); 
+// Loop through array on page load and render saved buttons
+searchArray.forEach(function(item) {
+    createButton(item)
+}); 
 
 // // Event listeners
-var searchForm = document.getElementById("searchForm")
+
 // submit/search button listener
 searchForm.addEventListener("submit", function(event) {
     event.preventDefault();
-    // cityValue = searchCity.value;
-    // if (citySearch === "") {
-    //     alert("Please enter a city name!")
-    //     return
-    // }
-    lookUp(citySearch);
-    // setStorage();
+    cityValue = citySearch.value;
+    if (cityValue === "") {
+        alert("Please enter a city name!")
+        return
+    }
+    console.log(cityValue);
+    lookUp(cityValue);
+    setStorage();
     JSON.parse(localStorage.getItem('saved'))
-    // createButton(searchCity.value);
-    citySearch = "";
+    createButton(cityValue);
+    citySearch.value = "";
 });
 
-// // saved button listener
-// $(".savedBtn").click(handler);
+// saved button listener
+$(".savedBtn").click(handler);
 
-// // clear search button listener
-// createButton.addEventListener('click', function() {
-//     localStorage.clear
-//     // insert code to remove html from saved container
-// })
+// clear search button listener
+clearBtn.addEventListener('click', function() {
+    localStorage.clear();
+    // insert code to remove html from saved container
+    savedContainer.innerHTML = "";
+})

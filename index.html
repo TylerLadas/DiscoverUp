@@ -35,9 +35,14 @@
           
           
           <input id="searchCity" class=" pr-5 px-1   "type="text" placeholder="City" name="City">
-          <button class="bg-green-900 rounded-md px-5 py-1">Search</button>
+          <button id="search" type="submit" class="bg-green-900 rounded-md px-5 py-1">Search</button>
         </form>
-        <div></div>
+        <div>
+          <h1>Recent Searches</h1>
+          <div id="savedContainer">
+          </div>
+          <button id="clearBtn" class="bg-green-900 rounded-md px-5 py-1 justify-items-end">Clear All</button>
+        </div>
       </div>
     </div>
      
@@ -56,7 +61,7 @@
 
 
       <!-- First Event Details -->
-      <div class="flex space-x-2 pt-5"> 
+      <!-- <div class="flex space-x-2 pt-5"> 
         <div class="flex-1">
           <img  class="  inline border-4 border-green-900"src="assets/images/Event 1.jpeg" alt="">
         </div>
@@ -68,11 +73,11 @@
             </p>
             <button class="bg-green-800 rounded-md px-5 py-1">Read More</button>
         </div>
-      </div>
+      </div> -->
 
 
       <!-- Second Event Details -->
-      <div class="flex space-x-2 pt-5"> 
+      <!-- <div class="flex space-x-2 pt-5"> 
         <div class="flex-1">
           <img  class="  inline border-4 border-green-900"src="assets/images/Event 1.jpeg" alt="">
         </div>
@@ -84,10 +89,10 @@
             </p>
             <button class="bg-green-800 rounded-md px-5 py-1">Read More</button>
         </div>
-      </div>
+      </div> -->
       
       <!-- Third Event Details -->
-      <div class="flex space-x-2 pt-5"> 
+      <!-- <div class="flex space-x-2 pt-5"> 
         <div class="flex-1">
           <img  class="  inline border-4 border-green-900"src="assets/images/Event 1.jpeg" alt="">
         </div>
@@ -99,7 +104,7 @@
             </p>
             <button class="bg-green-800 rounded-md px-5 py-1">Read More</button>
         </div>
-      </div>
+      </div> -->
 
       <!-- "fetched data for Event near you " section -  TicketMAster Response -->
       <div id="responseEvents" class="flex-1">
@@ -168,9 +173,7 @@
         </ul>
       </div>
     </div>
-    <!-- Restart Search here-->  
-    <button class="bg-green-900 rounded-md px-5 py-1 justify-items-end">Clear All</button>
-
+  
     <!-- "Testimonial" Title section -->  
     <div>
       <h1 class="text-3xl font-bold text-black text-center pt-10 pb-2 border-b-4 border-green-600">Testimonials</h1>
@@ -256,7 +259,8 @@
     </div>  -->
 
     <!-- Script source file/directory -->
-    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
