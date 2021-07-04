@@ -1,16 +1,20 @@
+var citySearch = document.getElementById('searchCity');
+var searchBtn = document.getElementById("search");
+var searchForm = document.getElementById("searchForm");
+var savedContainer = document.getElementById("savedContainer");
+var clearBtn = document.getElementById("clearBtn");
+let cityValue;
+// var zipSearch  = document.getElementById('searchZip').value;
+// var offSearch  = document.getElementById('searchRadius').value;
+
 //Execute search api for Events & Restos
-function lookUp() {
-
-var citySearch = document.getElementById('searchCity').value;
-var zipSearch  = document.getElementById('searchZip').value;
-var offSearch  = document.getElementById('searchRadius').value;
-
+function lookUp(city) {
 
 var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=';
-var apiEvent = 'https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events.json?';
+var apiEvent = 'https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events.json?size=5&';
 var eApiKey  = 'LVPi9sXqgdQ58cdxQJV9G5220uffRerh';
 
-fetch(apiEvent + 'city=' + citySearch + '&apikey=' + eApiKey) 
+fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey) 
     
     .then(function(response) {
 
@@ -74,54 +78,132 @@ fetch(apiEvent + 'city=' + citySearch + '&apikey=' + eApiKey)
     });     
 
 };    
-fetch(apiResto, {
+// fetch(apiResto, {
     
-    headers: {
-     'Authorization':'Bearer 6hxmQPOKdlDPYMmYwZG-1Pf3M3WRSDx8fWmaiFrtBOmsgBjLFAlrLjyGgO1hqdBJwixNHpGAUD7y8LXpb371w-zua6t8fkEeYS74i9cKj_UolOYtOHJyw5K7jgTdYHYx',
- }
-})
-    .then(function(response) {
+//     headers: {
+//      'Authorization':'Bearer 6hxmQPOKdlDPYMmYwZG-1Pf3M3WRSDx8fWmaiFrtBOmsgBjLFAlrLjyGgO1hqdBJwixNHpGAUD7y8LXpb371w-zua6t8fkEeYS74i9cKj_UolOYtOHJyw5K7jgTdYHYx',
+//  }
+// })
+//     .then(function(response) {
 
-        return response.json();
-    })
-    .then(function(response) {
-        //Console logs results from API JSON
-        console.log(response);
-        var totalRes = response.total;
-        console.log(totalRes);
-        if (totalRes > 0 ){
-            $.each(response.businesses, function(i, item) {
-                // Store each business's object in a variable
-                var id = item.id;
-                var alias = item.alias;
-                var phone = item.display_phone;
-                var image = item.image_url;
-                var name = item.name;
-                var rating = item.rating;
-                var reviewcount = item.review_count;
-                var address = item.location.address1;
-                var city = item.location.city;
-                var state = item.location.state;
-                var zipcode = item.location.zip_code;
-                var rUrl = item.url;
-                // Append our result into our page
-                $('#responseRestos').append('<div id="' +
-                    id + '" style="margin-top:50px;margin-bottom:50px;"><img src="' + 
-                    image + '" style="width:200px;height:150px;"> We found <b>' + 
-                    name + '</b> (' + alias + ')<br>Business ID: ' + 
-                    id + '<br> Located at: ' + 
-                    address + ' ' + 
-                    city + ', ' + 
-                    state + ' ' + 
-                    zipcode + '<br>The phone number for this business is: ' + 
-                    phone + '<br>This business has a rating of ' + 
-                    rating + ' with ' + 
-                    reviewcount + ' reviews. <br> Website: <a href="' +
-                    rUrl + '">Click here</a></div>');
-          });
+//         return response.json();
+//     })
+//     .then(function(response) {
+//         //Console logs results from API JSON
+//         console.log(response);
+//         var totalRes = response.total;
+//         console.log(totalRes);
+//         if (totalRes > 0 ){
+//             $.each(response.businesses, function(i, item) {
+//                 // Store each business's object in a variable
+//                 var id = item.id;
+//                 var alias = item.alias;
+//                 var phone = item.display_phone;
+//                 var image = item.image_url;
+//                 var name = item.name;
+//                 var rating = item.rating;
+//                 var reviewcount = item.review_count;
+//                 var address = item.location.address1;
+//                 var city = item.location.city;
+//                 var state = item.location.state;
+//                 var zipcode = item.location.zip_code;
+//                 var rUrl = item.url;
+//                 // Append our result into our page
+//                 $('#responseRestos').append('<div id="' +
+//                     id + '" style="margin-top:50px;margin-bottom:50px;"><img src="' + 
+//                     image + '" style="width:200px;height:150px;"> We found <b>' + 
+//                     name + '</b> (' + alias + ')<br>Business ID: ' + 
+//                     id + '<br> Located at: ' + 
+//                     address + ' ' + 
+//                     city + ', ' + 
+//                     state + ' ' + 
+//                     zipcode + '<br>The phone number for this business is: ' + 
+//                     phone + '<br>This business has a rating of ' + 
+//                     rating + ' with ' + 
+//                     reviewcount + ' reviews. <br> Website: <a href="' +
+//                     rUrl + '">Click here</a></div>');
+//           });
 
        
-        // Grab the results from the API JSON return
-    } 
+//         // Grab the results from the API JSON return
+//     } 
 
-    });     
+    // });     
+
+// Global variables
+
+// Array variable
+let searchArray;
+
+// // Check local storage for saved array items, if present array = localstorage if empty  array = []
+if (localStorage.getItem('saved')) {
+    searchArray = JSON.parse(localStorage.getItem('saved'));
+} else {
+    searchArray = [];
+}
+
+// Create local storage key to hold array items
+localStorage.setItem('saved', JSON.stringify(searchArray));
+
+// Declare variable to hold parsed local storage data
+const savedSearches = JSON.parse(localStorage.getItem('saved'));
+
+// Create function to push new values to array and then set to local storage
+//Confirm variable names to extract value from
+function setStorage() {
+    searchArray.push(citySearch.value) 
+    localStorage.setItem('saved', JSON.stringify(searchArray))   
+};
+
+// Handler function for click events
+function handler(event) {
+    event.preventDefault;
+    $('#responseEvents').html("");
+    cityValue = $(this).val();
+    lookUp(cityValue);
+}
+
+// Function to dynamically create new local storage items (buttons?)
+function createButton(text) {
+let savedBtn = document.createElement("button");
+savedBtn.textContent = text
+savedBtn.className = "savedBtn";
+savedBtn.setAttribute("type", "submit")
+savedBtn.setAttribute("value", text);
+savedBtn.addEventListener("click", handler)
+savedContainer.appendChild(savedBtn);
+};
+
+// Loop through array on page load and render saved buttons
+searchArray.forEach(function(item) {
+    createButton(item)
+}); 
+
+// // Event listeners
+
+// submit/search button listener
+searchForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    cityValue = citySearch.value;
+    if (cityValue === "") {
+        alert("Please enter a city name!")
+        return
+    }
+    $('#responseEvents').html("");
+    console.log(cityValue);
+    lookUp(cityValue);
+    setStorage();
+    JSON.parse(localStorage.getItem('saved'))
+    createButton(cityValue);
+    citySearch.value = "";
+});
+
+// saved button listener
+$(".savedBtn").click(handler);
+
+// clear search button listener
+clearBtn.addEventListener('click', function() {
+    localStorage.clear();
+    // insert code to remove html from saved container
+    savedContainer.innerHTML = "";
+})

@@ -1,0 +1,12 @@
+.savedBtn {
+    width: 100%;
+    text-align: center;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: block;
+}
+
+#clearBtn {
+    width: 100%;
+}
