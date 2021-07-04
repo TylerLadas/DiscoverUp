@@ -1,6 +1,6 @@
 # group-project
 
 
-group memebers : Tyler ladas, Dennis de Guzman, Thomas Habtemariam , Lakyn Felix.
-url :
+group members : .Tyler ladas, Dennis de Guzman, Thomas Habtemariam , Lakyn Felix
+url : https://github.com/TylerLadas/group-project.git
 
