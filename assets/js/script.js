@@ -158,8 +158,9 @@ function setStorage() {
 // Handler function for click events
 function handler(event) {
     event.preventDefault;
-    // add location values
-    // run fetch function
+    $('#responseEvents').html("");
+    cityValue = $(this).val();
+    lookUp(cityValue);
 }
 
 // Function to dynamically create new local storage items (buttons?)
@@ -188,6 +189,7 @@ searchForm.addEventListener("submit", function(event) {
         alert("Please enter a city name!")
         return
     }
+    $('#responseEvents').html("");
     console.log(cityValue);
     lookUp(cityValue);
     setStorage();
