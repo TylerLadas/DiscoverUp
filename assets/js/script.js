@@ -5,26 +5,18 @@ var citySearch = document.getElementById('searchCity').value;
 var zipSearch  = document.getElementById('searchZip').value;
 var offSearch  = document.getElementById('searchRadius').value;
 
-console.log("City: "+citySearch+" Postal Code: "+zipSearch+" Within "+offSearch+" km");
 
+var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=';
+var apiEvent = 'https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events.json?';
+var eApiKey  = 'LVPi9sXqgdQ58cdxQJV9G5220uffRerh';
 
-};
-
-var eventArr = [];
-var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=ottawa';
-var apiEvent = 'https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events.json?city=ottawa&apikey=LVPi9sXqgdQ58cdxQJV9G5220uffRerh';
-
-
-fetch(apiEvent) 
+fetch(apiEvent + 'city=' + citySearch + '&apikey=' + eApiKey) 
     
-    //headers: {
-    // 'Authorization':'Bearer LVPi9sXqgdQ58cdxQJV9G5220uffRerh',
- //}
-
     .then(function(response) {
 
         return response.json();
     })
+
     .then(function(response) {
         //Console logs results from API JSON
         console.log(response);
@@ -32,27 +24,56 @@ fetch(apiEvent)
         console.log(totalRes);
         if (totalRes > 0 ){
             $.each(response._embedded.events, function(i, item) {
-                // Store each business's object in a variable
+                // Initial response values stored into variables
                 var eId = item.id;
-                var eUrl = item.url;
-                var eName = item.name;
-
+                // Pick first image to display
+                //var eImageArr = JSON.parse(item.images);
+                var eImage = item.images[0].url;
                 
-               
-                // Append our result into our page
-                console.log(eName[0]);
+                var eName = item.name;
+                //Store date [Option to use Moment to format]
+                var eDate = moment(item.dates.start.localDate).format('MMM Do, YYYY');
+                
+                //Store time [Option to use Moment to format]
+                var eTime = moment(item.dates.start.dateTime).format('hh:mm a');
+
+                var eInfo = item.info;
+        
+                // Displaying results in page
+                //console.log(eName[0]);
                 $('#responseEvents').append('<div id="' +
-                  eId + '"> Name: ' +
-                  eName + ' Website: <a href="' +
-                  eUrl + '">Click</a></div>');
+                  eId + '" style="margin-top:50px;margin-bottom:50px;"> <img src="' +
+                  eImage + '"style="width:200px;height:150px;"><br>Name: ' +
+                  eName + ' On: ' +
+                  eDate + ' at ' + 
+                  eTime + '<br>' +                  
+                  'Description: ' + eInfo +'<button id="a' +
+                  eId + '">More Info</button><br></br></div>');
+                  var aId ="a"+eId;
+                  if (aId.onclick) {
+                     $(eid).append('<div>Hello trial</div>');
+                  }
+                
+                
+                //return fetch(
+                  //  'https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events/' +
+                    //eId + '.json?city=ottawa&apikey=LVPi9sXqgdQ58cdxQJV9G5220uffRerh');
+                //.then(function(dResponse) {
+                  //  return response.json();
+                //})
+
+
           });
 
        
-        // Grab the results from the API JSON return
-    } 
-
+        
+        } else {
+        //if totalRes = 0
+        $('#responseEvents').append('<div> No event listings in your area at this time. </div>');
+        }
     });     
 
+};    
 fetch(apiResto, {
     
     headers: {
@@ -86,7 +107,7 @@ fetch(apiResto, {
                 // Append our result into our page
                 $('#responseRestos').append('<div id="' +
                     id + '" style="margin-top:50px;margin-bottom:50px;"><img src="' + 
-                    image + '" style="width:200px;height:150px;"><br>We found <b>' + 
+                    image + '" style="width:200px;height:150px;"> We found <b>' + 
                     name + '</b> (' + alias + ')<br>Business ID: ' + 
                     id + '<br> Located at: ' + 
                     address + ' ' + 
