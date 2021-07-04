@@ -10,3 +10,7 @@
 #clearBtn {
     width: 100%;
 }
+
+#event-head, #restaurant-head {
+    display: none;
+}

@@ -3,6 +3,8 @@ var searchBtn = document.getElementById("search");
 var searchForm = document.getElementById("searchForm");
 var savedContainer = document.getElementById("savedContainer");
 var clearBtn = document.getElementById("clearBtn");
+var eventHead = document.getElementById("event-head");
+var restaurantHead = document.getElementById("restaurant-head")
 let cityValue;
 // var zipSearch  = document.getElementById('searchZip').value;
 // var offSearch  = document.getElementById('searchRadius').value;
@@ -190,6 +192,8 @@ searchForm.addEventListener("submit", function(event) {
         return
     }
     $('#responseEvents').html("");
+    eventHead.style.display = "flex";
+    restaurantHead.style.display = "flex";
     console.log(cityValue);
     lookUp(cityValue);
     setStorage();
