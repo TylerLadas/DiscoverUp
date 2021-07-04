@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Global variables
 
 // Array variable
@@ -72,7 +71,6 @@ createButton.addEventListener('click', function() {
     localStorage.clear
     // insert code to remove html from saved container
 })
-=======
 //Execute search api for Events & Restos
 function lookUp() {
 
@@ -200,4 +198,3 @@ fetch(apiResto, {
     } 
 
     });     
->>>>>>> feature/fetch
