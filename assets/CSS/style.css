@@ -1,13 +1,74 @@
-.savedBtn {
-    width: 100%;
-    text-align: center;
-    background-color: lightgray;
-    border-radius: 5px;
-    margin: 10px 0;
-    display: block;
-}
-
-#clearBtn {
-    width: 100%;
-}
-
+                /* :root {
+    --color-primary: teal;
+    --color-secondary: #5B1561;
+    ... */
+                
+                .savedBtn {
+                    width: 100%;
+                    text-align: center;
+                    background-color: lightgray;
+                    border-radius: 5px;
+                    margin: 10px 0;
+                    display: block;
+                }
+                
+                #clearBtn {
+                    width: 100%;
+                }
+                
+                textarea:focus,
+                input:focus {
+                    outline: none;
+                }
+                
+                h1 {
+                    color: teal;
+                }
+                
+                img {
+                    width: 250px;
+                    height: 180px;
+                    border-radius: 15px;
+                    border-color: teal;
+                    margin-left: 200px;
+                }
+                
+                .border-green-900 {
+                    --tw-border-opacity: 2;
+                    border-color: teal;
+                }
+                
+                .bg-pink-600 {
+                    background-color: teal;
+                }
+                
+                .border-pink-600 {
+                    border-color: teal;
+                    padding-left: 12px;
+                }
+                
+                .rounded-md {
+                    border-radius: 10px;
+                    background-color: teal;
+                    font-weight: 600;
+                    margin-top: ;
+                }
+                
+                .text-green-800 {
+                    color: teal;
+                }
+                
+                .border-b-4 {
+                    border-bottom-width: 4px;
+                    border-color: #5B1561;
+                }
+                
+                p {
+                    color: white;
+                    padding: 12px;
+                }
+                
+                .text-indigo-700,
+                .text-indigo-600 {
+                    color: #5B1561;
+                }
