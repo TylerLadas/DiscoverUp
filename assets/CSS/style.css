@@ -1,3 +1,4 @@
+<<<<<<< HEAD
                 /* :root {
     --color-primary: teal;
     --color-secondary: #5B1561;
@@ -72,3 +73,21 @@
                 .text-indigo-600 {
                     color: #5B1561;
                 }
+=======
+.savedBtn {
+    width: 100%;
+    text-align: center;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: block;
+}
+
+#clearBtn {
+    width: 100%;
+}
+
+#event-head, #restaurant-head {
+    display: none;
+}
+>>>>>>> d174777b1c1ea3a9e3c0f2603043b98ddf13f953
