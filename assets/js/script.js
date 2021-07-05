@@ -59,6 +59,10 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
                 var eTime = moment(item.dates.start.dateTime).format('hh:mm a');
 
                 var eInfo = item.info;
+                JSON.stringify(eInfo);
+                if (eInfo === undefined) {
+                    eInfo = "No description of event."
+                }
         
                 // Displaying results in page
                 //console.log(eName[0]);
@@ -69,15 +73,15 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
                   eDate + ' at ' + 
                   eTime + '<br> Location: ' +
                   eVenue + ' at ' +
-                  eAddress + '<br> Description: ' +
-                  eInfo + '<a href="' +
+                  eAddress + '<br> Description: <p id="sInfo" style="text-indent: 15px;">' +
+                  eInfo + ' </p><a href="' +
                   eUrl +'"> More Info. </a> <button onclick="restoTrigger()" id="a' +
                   eId + '">Find Nearby Establishments.</button><br></br></div>');
        
           });
 
        
-        console.log('latitude', eLat);
+        
         } else {
         //if totalRes = 0
         $('#responseEvents').append('<div> No event listings in your area at this time. </div>');
@@ -108,7 +112,7 @@ fetch(apiResto, {
          console.log(totalRes);
          if (totalRes > 0 ){
              $.each(response.businesses, function(i, item) {
-                 // Store each business's object in a variable
+                 // Store each entry keys into variables
                  var id = item.id;
                  var alias = item.alias;
                  var phone = item.display_phone;
@@ -121,7 +125,7 @@ fetch(apiResto, {
                  var state = item.location.state;
                  var zipcode = item.location.zip_code;
                  var rUrl = item.url;
-                 // Append our result into our page
+                 // Display Results
                  $('#responseRestos').append('<div id="' +
                      id + '" style="margin-top:50px;margin-bottom:50px;"><img src="' + 
                      image + '" style="width:200px;height:150px;"><b>' + 
@@ -137,7 +141,7 @@ fetch(apiResto, {
            });
 
        
-         // Grab the results from the API JSON return
+         
      } 
 
  });   
