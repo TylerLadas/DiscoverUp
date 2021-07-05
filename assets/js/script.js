@@ -23,9 +23,9 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
 
     .then(function(response) {
         //Console logs results from API JSON
-        console.log(response);
+        //console.log(response);
         var totalRes = response.page.size;
-        console.log(totalRes);
+        //console.log(totalRes);
         if (totalRes > 0 ){
             $.each(response._embedded.events, function(i, item) {
                 // Initial response values stored into variables
@@ -77,7 +77,7 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
           });
 
        
-        console.log('latitude', eLat);
+        console.log(eLat);
         } else {
         //if totalRes = 0
         $('#responseEvents').append('<div> No event listings in your area at this time. </div>');
