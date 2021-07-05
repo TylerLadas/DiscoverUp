@@ -14,98 +14,131 @@
 </head>
 
   <!-- Testing the body property to check the Tailwind framework is responding -->
-  <body class="bg-gray-400 text-gray-900">
+  <body class="bg-black text-gray-900">
 
     <!-- Header Note on Heading section -->
-    <div class=" flex-auto flex-wrap my-auto py-5 bg-gray-900  text-white ">
-      <h1 class="px-3 pb-5 text-3xl font-bold text-green-600 inline ">DiscoverUp</h1>
-      <ul class=" text-right float-right inline space-x-3 pr-2">
-        <li href="/" class="inline">Testimonials</li>
-        <li href="/" class="inline">Contact Us</li>
-      </ul>
-      <p class="font-sans ... text-2xl px-10 pt-5 text-center italic">Find Cool Upcoming Events & Hot Restuarants in your area</p> 
-      <p class="py-2 font-sans ... text-green-600 italic px-5  text-x text-center">Get notified with us on upcoming shows, music, concerts, events and also pick hot Restuarants near you  </p>
-    </div>
+    <div class="bg-gray-900">
+      <div class="my-auto py-5">
+        <div class="pb-5">
+          <h1 class="inline px-3  text-3xl font-bold text-green-600  ">DiscoverUp</h1>
+          <ul class="inline text-right float-right text-white ">
+            <li class="inline hover:text-green-600 hidden md:flex pb-2 pr-2"> <a href="#testimonials">Testimonials</a></li>
+            <li class="inline hover:text-green-600 hidden md:flex pb-2 pr-2"> <a href="#contact">Contact Us</a></li>
+            <li class="inline hover:text-green-600 hidden md:flex pr-2"> <a href="/">Help</a></li>
+          </ul> 
+          <div class="md:hidden flex float-right text-white">
+            <button class="mobile-menu-button">
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentcolor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+          </div>
+          <ul class="mobile-menu hidden md:hidden">
+            <li class="block hover:text-green-600 text-white pt-3 pl-20 "> <a href="#testimonials">Testimonials</a></li>
+            <li class="block hover:text-green-600 text-white pt-3 pl-20"> <a href="#contact">Contact Us</a></li>
+            <li class="block hover:text-green-600 text-white pt-3 pl-20"> <a href="/">Help</a></li>
+          </ul> 
+        </div> 
+      </div>
+      <div class="font-sans ... text-center italic pb-5">
+        <p class="md:text-3xl lg:text-yellow  text-white pb-3">Find Cool Upcoming Events & Popular Restuarants in your area</p> 
+        <p class="hidden: md:text-x text-green-600 italic  text-x ">Get notified with us on upcoming shows, music, concerts, events and also pick hot Restuarants near you  </p>
+      </div>
+    </div>  
 
     <!-- "LOGO and Search bar" section -->
     <div class=" flex-auto flex-wrap w-100%  bg-white">
-      <h1 class="text-center text-4xl py-2">Discover Coming<span class="italic"> Events & Restuarants</span></h1>
+      <h1 class=" italic text-center md:text-4xl py-2"><span class="text-4xl">1000+ </span>Events & Hot Restuarants are available !</h1>
       <div class="flex-auto flex-wrap pb-2 pt-2 grid justify-items-center">
         <form id="" class=" pr-1 py-1 border-2 rounded-md border-green-600 ">
-          
-          
-          <input id="inputPostalCode" class=" pr-5 px-1   "type="text" placeholder="Postal code here" name="postal-code">
+          <input id="city" class=" pr-5 px-1   "type="text" placeholder="Type Your City Here" name="city">
           Radius:
           <select id="searchRadius" class="border-2 rounded-md border-green-900" placeholder="Km">
               <option value="50">Within 50km</option>
               <option value="20">Within 20km</option>
               <option value="5">Within 5km</option>
           </select>
-          <button class="bg-green-900 rounded-md px-5 py-1">Search</button>
+          <button class="bg-green-900 hover:bg-yellow-900 rounded-md px-5 py-1">Search</button>
         </form>
         <div></div>
       </div>
     </div>
+
+
+    <!-- Local Storage for the saved searches -->
+    <div id="search-data" class="flex-1">
+      <ul>
+          <li id="search-list" class=""></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- "fetched data for Event near you " section -  TicketMAster Response -->
+  <div id="responseEvents">
+    <ul>
+        <li id="data-events"></li>
+    </ul>
+  </div>
      
     <!-- "Event Near You" section -->
-    <div class="flex-auto flex-wrap px-20">
+    <div class="flex-auto flex-wrap px-10">
       <div>
-        <h1 class="text-3xl font-bold text-black text-center pt-10 pb-2 border-b-4 border-green-600">Events Near You</h1>
+        <h1 class="text-4xl font-bold text-white text-center pt-10 pb-2 mb-3 border-b-8 border-green-600">Events Near You</h1>
       </div>
-
-      <!-- "fetched data for Event near you " section -  TicketMAster Response -->
-      <div id="responseEvents">
-        <ul>
-            <li id="data-events"></li>
-        </ul>
-      </div>
-
 
       <!-- First Event Details -->
-      <div class="flex space-x-2 pt-5"> 
-        <div class="flex-1">
-          <img  class="  inline border-4 border-green-900"src="assets/images/Event 1.jpeg" alt="">
-        </div>
-        <div class="flex-1">
-          <p class="text-green-800 font-bold">June 30, 2021 08:45 PM EST</p>
-          <p class="italic">Don't miss the latest from Downtown Ottawa Get free access to exclusive 
-                deals, events, news, and more. input input You are agreeing to Parkbench 
-                Terms of Use
-            </p>
-            <button class="bg-green-800 rounded-md px-5 py-1">Read More</button>
+      <div class="bg-white rounded-xl shadow-md overflow-hidden mb-3">
+        <div class="md:flex">
+          <div class="md:flex-shrink-0">
+            <img class="h-48 w-full object-cover md:h-full md:w-48" src="assets/images/Event 1.jpeg" alt="Man looking at item at a store">
+          </div>
+          <div class="p-8">
+            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">June 30, 2021 08:45 PM ESTy</div>
+            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">105 Pond Street, Rockcliff, ON K1r 7S8</a>
+          </div>
+          <div class="p-8">
+            <p class=" inline mt-2 text-gray-500 pr-5 font-bold">The Weekend - Live Performance </p>
+            <button class=" float-right bg-green-800 hover:bg-yellow-900 rounded-md  px-5 py-1">More</button>
+          </div>
         </div>
       </div>
-
+    
 
       <!-- Second Event Details -->
-      <div class="flex space-x-2 pt-5"> 
-        <div class="flex-1">
-          <img  class="  inline border-4 border-green-900"src="assets/images/Event 1.jpeg" alt="">
-        </div>
-        <div class="flex-1">
-          <p class="text-green-800 font-bold">June 30, 2021 08:45 PM EST</p>
-          <p class="italic">Don't miss the latest from Downtown Ottawa Get free access to exclusive 
-                deals, events, news, and more. input input You are agreeing to Parkbench 
-                Terms of Use
-            </p>
-            <button class="bg-green-800 rounded-md px-5 py-1">Read More</button>
+      <div class="bg-white rounded-xl shadow-md overflow-hidden mb-3">
+        <div class="md:flex">
+          <div class="md:flex-shrink-0">
+            <img class="h-48 w-full object-cover md:h-full md:w-48" src="assets/images/Event 2.jpeg" alt="Man looking at item at a store">
+          </div>
+          <div class="p-8">
+            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">June 30, 2021 08:45 PM ESTy</div>
+            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">105 Pond Street, Rockcliff, ON K1r 7S8</a>
+          </div>
+          <div class="p-8">
+            <p class=" inline mt-2 text-gray-500 pr-5 font-bold">The Weekend - Live Performance </p>
+            <button class=" float-right bg-green-800 hover:bg-yellow-900 rounded-md  px-5 py-1">More</button>
+          </div>
         </div>
       </div>
+    
       
       <!-- Third Event Details -->
-      <div class="flex space-x-2 pt-5"> 
-        <div class="flex-1">
-          <img  class="  inline border-4 border-green-900"src="assets/images/Event 1.jpeg" alt="">
-        </div>
-        <div class="flex-1">
-          <p class="text-green-800 font-bold">June 30, 2021 08:45 PM EST</p>
-          <p class="italic">Don't miss the latest from Downtown Ottawa Get free access to exclusive 
-                deals, events, news, and more. input input You are agreeing to Parkbench 
-                Terms of Use
-            </p>
-            <button class="bg-green-800 rounded-md px-5 py-1">Read More</button>
+      <div class="bg-white rounded-xl shadow-md overflow-hidden mb-3">
+        <div class="md:flex">
+          <div class="md:flex-shrink-0">
+            <img class="h-48 w-full object-cover md:h-full md:w-48" src="assets/images/Event 3.jpeg" alt="Man looking at item at a store">
+          </div>
+          <div class="p-8">
+            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">June 30, 2021 08:45 PM ESTy</div>
+            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">105 Pond Street, Rockcliff, ON K1r 7S8</a>
+          </div>
+          <div class="p-8">
+            <p class=" inline mt-2 text-gray-500 pr-5 font-bold">The Weekend - Live Performance </p>
+            <button class=" float-right bg-green-800 hover:bg-yellow-900 rounded-md  px-5 py-1">More</button>
+          </div>
         </div>
       </div>
+    </div>
 
       <!-- "fetched data for Event near you " section -  TicketMAster Response -->
       <div id="responseEvents" class="flex-1">
@@ -118,54 +151,52 @@
     <!-- "Restuarant Near You " response content layout section -->
     <div class="flex-auto flex-wrap px-20">
       <div>
-        <h1 class="text-3xl font-bold text-black text-center pt-10 pb-2 border-b-4 border-green-600">Restuarants Near You</h1>
+        <h1 class="text-4xl font-bold text-white text-center pt-10 pb-2 border-b-8 border-green-600">Restuarants Near You</h1>
       </div>
 
       <!-- 1st restuarant  Details -->
       <div class="flex space-x-2 pt-5"> 
-        <div class="flex-1">
-          <img  class="  inline border-4 border-green-900"src="assets/images/Event 3.jpeg" alt="">
+        <div class="flex-1 pr-4">
+          <img  class="inline border-4 border-green-900"src="assets/images/R 6.jpeg" alt="">
         </div>
-        <div class="flex-1">
-          <p class="text-green-800 font-bold">June 30, 2021 08:45 PM EST</p>
-          <p class="italic">Don't miss the latest from Downtown Ottawa Get free access to exclusive 
-                deals, events, news, and more. input input You are agreeing to Parkbench 
-                Terms of Use
+        <div class="flex-1 pr-4">
+          <p class="text-green-800 text-x font-bold">105 Pnd Street, K1N 1B1</p>
+          <p class="italic text-indigo-500">Marioat Hotel
             </p>
-            <button class="bg-green-800 rounded-md px-5 py-1">Read More</button>
+            <button class="bg-green-800 hover:bg-yellow-900  rounded-md px-5 py-1">Menu</button>
         </div>
       </div>
 
 
       <!-- 2nd restuarant Details -->
       <div class="flex space-x-2 pt-5"> 
-        <div class="flex-1">
-          <img  class="  inline border-4 border-green-900"src="assets/images/Event 3.jpeg" alt="">
+        <div class="flex-1 pr-4">
+          <img  class="  inline border-4 border-green-900"src="assets/images/R 5.jpeg" alt="">
         </div>
-        <div class="flex-1">
-          <p class="text-green-800 font-bold">June 30, 2021 08:45 PM EST</p>
-          <p class="italic">Don't miss the latest from Downtown Ottawa Get free access to exclusive 
-                deals, events, news, and more. input input You are agreeing to Parkbench 
-                Terms of Use
+        <div class="flex-1 pr-4">
+          <p class="text-green-800 text-x font-bold">361 Queen Street, Ottawa, ON K1R 7S8</p>
+          <p class="italic text-indigo-500">The Five
             </p>
-            <button class="bg-green-800 rounded-md px-5 py-1">Read More</button>
+            <button class="bg-green-800 hover:bg-yellow-900 rounded-md px-5 py-1">Menu</button>
         </div>
       </div>
       
       <!-- 3rd restuarant Details -->
       <div class="flex space-x-2 pt-5"> 
-        <div class="flex-1">
-          <img  class="  inline border-4 border-green-900"src="assets/images/Event 3.jpeg" alt="">
+        <div class="flex-1 pr-4">
+          <img  class="  inline border-4 border-green-900"src="assets/images/R 3.jpeg" alt="">
         </div>
-        <div class="flex-1">
-          <p class="text-green-800 font-bold">June 30, 2021 08:45 PM EST</p>
-          <p class="italic">Don't miss the latest from Downtown Ottawa Get free access to exclusive 
-                deals, events, news, and more. input input You are agreeing to Parkbench 
-                Terms of Use
+        <div class="flex-1 pr-4">
+          <p class="text-green-800 text-x font-bold">161 Elgin Street Ottawa,ON K1N 6G7</p>
+          <p class="italic text-indigo-500">The Kitchen
             </p>
-            <button class="bg-green-800 rounded-md px-5 py-1">Read More</button>
-        </div>
+            <button class="bg-green-800 hover:bg-yellow-900  rounded-md px-5 py-1">Menu</button>
+           
+          </div>
+        
       </div>
+     
+      
 
       <!-- "fetched data for Event near you " section -  TicketMAster Response -->
       <div id="responseEvents" class="flex-1">
@@ -174,93 +205,69 @@
         </ul>
       </div>
     </div>
+  
+
+
     <!-- Restart Search here-->  
-    <button class="bg-green-900 rounded-md px-5 py-1 justify-items-end">Clear All</button>
+    <div class=" sticky top-0 pt-6">
+    <button class="bg-green-900 hover:bg-yellow-900 rounded-md px-5 py-1 ">Reset</button>
+        </div>
 
+  
     <!-- "Testimonial" Title section -->  
-    <div>
-      <h1 class="text-3xl font-bold text-black text-center pt-10 pb-2 border-b-4 border-green-600">Testimonials</h1>
+    <div class="px-10">
+      <h1 id="testimonials" class="text-3xl font-bold text-white text-center pt-10 pb-2 border-b-4 border-green-600">Testimonials</h1>
     </div>
-    <!-- "Testimonial" grid-->   
+<!-- "Testimonial" grid-->   
     <div class="grid grid-flow-col grid-cols-3 grid-rows-1 gap-4 p-5">
-      <div>
-        <p class="border-4 border-green-900 py-8 px-14 text-justify bg-green-900 border-gray-500 rounded-xl">Don't miss the latest from Downtown Ottawa Get free access to exclusive 
-        deals, events, news, and more. input input You are agreeing to Parkbench 
-        Terms of Use.<br>
-      
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-      
-        </p>
+        <div class="bg-green-900 rounded-xl shadow-md overflow-hidden mb-3">
+          <div class="md:flex">
+            <div class="md:flex-shrink-0 p-8">      
+              <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Excellent</div>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+            </div>
+          </div>     
+        </div>
+
+        <div class="bg-green-900 rounded-xl shadow-md overflow-hidden mb-3">
+          <div class="md:flex">
+            <div class="md:flex-shrink-0 p-8">      
+              <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Excellent</div>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+            </div>
+          </div>     
+        </div>
+
+        <div class="bg-green-900 rounded-xl shadow-md overflow-hidden mb-3">
+          <div class="md:flex">
+            <div class="md:flex-shrink-0 p-8">      
+              <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Excellent</div>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+            </div>
+          </div>     
+        </div>
       </div>
-      <div class="pt-10">
-        <p class="border-4 border-green-900 border-4 border-green-900 py-8 px-14 text-justify bg-green-900 border-gray-500 rounded-xl">Don't miss the latest from Downtown Ottawa Get free access to exclusive 
-        deals, events, news, and more. input input You are agreeing to Parkbench 
-        Terms of Use.<br>
-
-
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-      
-        </p>
-      </div>
-      <div>
-        <p class="border-4 border-green-900 py-8 px-14 text-justify bg-green-900 border-gray-500 rounded-xl">Don't miss the latest from Downtown Ottawa Get free access to exclusive 
-        deals, events, news, and more. input input You are agreeing to Parkbench 
-        Terms of Use.<br>
-
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        </p>
-      </div>
-    </div>
-
+    
     <!-- Footer section -->
     <div class=" flex-auto flex-wrap my-auto py-5 bg-gray-900  text-white border-2 rounded-md border-green-600">
-      <h1 class="px-3 pb-5 text-3xl font-bold text-green-600 inline ">Contact Us</h1>
+      <h1 id="contact" class="px-3 pb-5 text-3xl font-bold text-green-600 inline ">Contact Us</h1>
       <ul class=" text-right float-right inline space-x-3 pr-2">
         <li href="/" class="inline">Tyler</li>
         <li href="/" class="inline">Lakyn</li>
         <li href="/" class="inline">Dennis</li>
         <li href="/" class="inline">Thomas</li>
-      </ul>
-
-    <!-- Contact Form -->
-      <form class="pt-5">
-        <div class="inline">
-        <label for="fname">First Name</label>
-        <input class="text-black border-2 rounded-md border-green-600" type="text" id="fname" name="firstname" placeholder="Your name.." >
-        </div>
-        <div class="inline">
-        <label for="lname">Last Name</label>
-        <input class="text-black border-2 rounded-md border-green-600" type="text" id="lname" name="lastname" placeholder="Your last name..">
-        </div>
-        <div class="inline">
-          <label for="e-mail">E-Mail</label>
-          <input class="text-black border-2 rounded-md border-green-600" type="text" id="e-mail" name="e-mail" placeholder="Your email..">
-          </div>
-        <div class="inline">
-        <label for="city">City</label>
-        <select  name="country" class="text-black border-2 rounded-md border-green-600">
-          <option value="australia">Ottawa</option>
-          <option value="canada">Gatineau</option>
-          <option value="usa">Montreal</option>
-        </select>
-        </div>
-        <div class="inline">
-
-        <label for="subject">Subject</label>
-        <textarea class="text-black border-2 rounded-md border-green-600" id="subject" name="subject" placeholder="Write something.." style="height:50px"></textarea>
-        </div>
-        <input class="bg-green-900 rounded-md px-5 py-1" type="submit" value="Submit">
-      </form>
-    </div>  
-
+      </ul>   
+    </div>
+    
     <!-- Script source file/directory -->
     <script src="./assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
