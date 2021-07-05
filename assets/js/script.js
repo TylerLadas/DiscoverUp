@@ -188,7 +188,7 @@ function handler(event) {
     $('#responseEvents').html("");
     $('#responseRestos').html("");
     eventHead.style.display = "flex";
-    // restaurantHead.style.display = "flex";
+    restaurantHead.style.display = "none";
     cityValue = $(this).val();
     lookUp(cityValue);
 }
