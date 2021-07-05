@@ -99,6 +99,9 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
 function restoTrigger () {
 //
 
+eventHead.style.display = "none";
+$('#responseEvents').html("");
+
 var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?';
 fetch(apiResto + 'latitude=' + rLat + '&longitude=' + rLong + '&radius=20000', {
     
