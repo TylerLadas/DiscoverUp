@@ -101,6 +101,7 @@ function restoTrigger () {
 
 eventHead.style.display = "none";
 $('#responseEvents').html("");
+restaurantHead.style.display = "flex";
 
 var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?';
 fetch(apiResto + 'latitude=' + rLat + '&longitude=' + rLong + '&radius=20000', {
@@ -187,7 +188,7 @@ function handler(event) {
     $('#responseEvents').html("");
     $('#responseRestos').html("");
     eventHead.style.display = "flex";
-    restaurantHead.style.display = "flex";
+    // restaurantHead.style.display = "flex";
     cityValue = $(this).val();
     lookUp(cityValue);
 }
@@ -215,13 +216,13 @@ searchForm.addEventListener("submit", function(event) {
     event.preventDefault();
     cityValue = citySearch.value;
     if (cityValue === "") {
-        alert("Please enter a city name!")
+        toggleModal();
         return
     }
     $('#responseEvents').html("");
     $('#responseRestos').html("");
     eventHead.style.display = "flex";
-    restaurantHead.style.display = "block";
+    // restaurantHead.style.display = "flex";
     console.log(cityValue);
     lookUp(cityValue);
     setStorage();
@@ -239,4 +240,21 @@ clearBtn.addEventListener('click', function() {
     // insert code to remove html from saved container
     savedContainer.innerHTML = "";
 })
-//};
+
+// modal alert
+
+const modal = document.querySelector(".modal");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+  modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
