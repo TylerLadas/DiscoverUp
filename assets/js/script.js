@@ -98,6 +98,7 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
 
 function restoTrigger () {
 //
+
 var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?';
 fetch(apiResto + 'latitude=' + rLat + '&longitude=' + rLong + '&radius=20000', {
     
@@ -144,7 +145,7 @@ fetch(apiResto + 'latitude=' + rLat + '&longitude=' + rLong + '&radius=20000', {
                      rUrl + '">Click here</a></div>');
            });
 
-       
+           
          
      } 
 
@@ -181,6 +182,9 @@ function setStorage() {
 function handler(event) {
     event.preventDefault;
     $('#responseEvents').html("");
+    $('#responseRestos').html("");
+    eventHead.style.display = "flex";
+    restaurantHead.style.display = "flex";
     cityValue = $(this).val();
     lookUp(cityValue);
 }
@@ -212,8 +216,9 @@ searchForm.addEventListener("submit", function(event) {
         return
     }
     $('#responseEvents').html("");
+    $('#responseRestos').html("");
     eventHead.style.display = "flex";
-    restaurantHead.style.display = "flex";
+    restaurantHead.style.display = "block";
     console.log(cityValue);
     lookUp(cityValue);
     setStorage();
