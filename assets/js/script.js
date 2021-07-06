@@ -99,12 +99,12 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
 function restoTrigger () {
 //
 
-eventHead.style.display = "none";
-$('#responseEvents').html("");
+// eventHead.style.display = "none";
+// $('#responseEvents').html("");
 restaurantHead.style.display = "flex";
 
-var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?';
-fetch(apiResto + 'latitude=' + rLat + '&longitude=' + rLong + '&radius=20000', {
+var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=10';
+fetch(apiResto + '&latitude=' + rLat + '&longitude=' + rLong + '&radius=20000', {
     
     headers: {
       'Authorization':'Bearer 6hxmQPOKdlDPYMmYwZG-1Pf3M3WRSDx8fWmaiFrtBOmsgBjLFAlrLjyGgO1hqdBJwixNHpGAUD7y8LXpb371w-zua6t8fkEeYS74i9cKj_UolOYtOHJyw5K7jgTdYHYx',
@@ -222,7 +222,7 @@ searchForm.addEventListener("submit", function(event) {
     $('#responseEvents').html("");
     $('#responseRestos').html("");
     eventHead.style.display = "flex";
-    // restaurantHead.style.display = "flex";
+    restaurantHead.style.display = "none";
     console.log(cityValue);
     lookUp(cityValue);
     setStorage();
