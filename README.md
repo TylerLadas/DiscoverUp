@@ -35,7 +35,7 @@ Then I am presented with a cleared local storage and saved events container
 * Yelp Fusion API
 
 ## Website
-
+https://tylerladas.github.io/DiscoverUp/
 
 ## Contribution
 by Tyler Ladas, Dennis de Guzman, Thomas Habtemariam , Lakyn Felix
