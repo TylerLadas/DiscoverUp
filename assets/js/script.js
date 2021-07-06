@@ -222,7 +222,7 @@ searchForm.addEventListener("submit", function(event) {
     $('#responseEvents').html("");
     $('#responseRestos').html("");
     eventHead.style.display = "flex";
-    restaurantHead.style.display = "none";
+    restaurantHead.style.display = "";
     console.log(cityValue);
     lookUp(cityValue);
     setStorage();
