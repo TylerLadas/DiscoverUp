@@ -1,0 +1,51 @@
+:root {
+    --color-primary: teal;
+    --color-secondary: #c443c4;
+}
+
+body {
+    background-color: black;
+}
+
+a {
+    color: var(--color-primary);
+    justify-content: center;
+}
+
+.teal {
+    color: var(--color-primary);
+}
+
+.fuchsia {
+    color: var(--color-secondary);
+}
+
+img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.border-green-600 {
+    color: var(--color-primary);
+}
+
+.border-blue-600 {
+    border-color: var(--color-primary);
+}
+
+.bg-gray-900 {
+    color: var(--color-secondary);
+}
+
+#table {
+    background-color: cadetblue;
+}
+
+.lakyn {
+    margin-left: 500px;
+}
+
+footer {
+    background-color: var(--color-primary);
+}
