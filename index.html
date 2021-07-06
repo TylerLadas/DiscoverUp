@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./assets/CSS/style.css">
 
-  <title>UpComing Events & Restuarants Near You</title>
+  <title>UpComing Events & Restaurants Near You</title>
 </head>
 
   <!-- Testing the body property to check the Tailwind framework is responding -->
@@ -39,7 +39,7 @@
           <button id="search" type="submit" class="bg-green-900 rounded-md px-5 py-1">Search</button>
         </form>
         <div>
-          <h1>Recent Searches</h1>
+          <h1>Back to:</h1>
           <div id="savedContainer">
           </div>
           <button id="clearBtn" class="text-center bg-green-900 rounded-md px-5 py-1 justify-items-center">Clear All</button>
@@ -64,13 +64,20 @@
     <!-- "Restuarant Near You " response content layout section -->
     <div class="flex-auto flex-wrap px-20">
       <div>
-        <h1 id="restaurant-head" class="text-3xl font-bold text-black text-center pt-10 pb-2 border-b-4 border-green-600">Restuarants Near You</h1>
+        <h1 id="restaurant-head" class="text-3xl font-bold text-black text-center pt-10 pb-2 border-b-4 border-green-600">Restaurants Near You</h1>
       </div>
       <!-- "fetched data for Event near you " section -  TicketMAster Response -->
       <div id="responseRestos" class="flex-1">
         <ul>
             <li id="data-restuarants"></li>
         </ul>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h1>Please enter a valid city!</h1>
       </div>
     </div>
   
