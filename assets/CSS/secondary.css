@@ -1,0 +1,54 @@
+    :root {
+       --color-primary: teal;
+       --color-secondary: #c443c4;
+   }
+   
+   .teal {
+       color: var(--color-primary);
+   }
+   
+   .fuchsia {
+       color: var(--color-secondary);
+       border-bottom: 3px solid darkcyan;
+       width: 500px;
+   }
+   
+   body {
+       background-color: black;
+       justify-items: center;
+   }
+   
+   a {
+       color: var(--color-primary);
+   }
+   
+   .teal {
+       color: var(--color-primary);
+   }
+   
+   .fuchsia {
+       color: var(--color-secondary);
+   }
+   
+   img {
+       margin: 10px 10px 10px 10px;
+       border: 3px solid darkcyan;
+       border-radius: 50%;
+       width: 150px;
+       height: 150px;
+   }
+   
+   .name {
+       color: var(--color-secondary);
+       text-align: center;
+   }
+   
+   .fa {
+       font-size: 22px;
+   }
+   
+   .footer {
+       background-color: var(--color-primary);
+       color: teal;
+       text-align: right;
+   }
