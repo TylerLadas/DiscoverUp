@@ -91,6 +91,7 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
                 function eCoordinates() {
                     console.log('clickedID: ', aId);
                     window.rId = aId;
+                    window.scrollTo(0,0);
                     //Pull coordinates: longitude
                     var eLong = item._embedded.venues[0].location.longitude;
                     window.rLong = eLong;
