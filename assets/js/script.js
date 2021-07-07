@@ -79,7 +79,7 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
                   eTime + '<br> Location: ' +
                   eVenue + ' at ' +
                   eAddress + '<br> Description: <p id="sInfo" style="text-indent: 15px;">' +
-                  eInfo + ' </p><a href="' +
+                  eInfo + ' </p><a target="_blank" href="' +
                   eUrl +'"> More Info. </a> <br><button id="a' +
                   eId + '">Find Nearby Establishments.</button><br></br></div>');
 
@@ -172,7 +172,7 @@ fetch(apiResto + 'latitude=' + rLat + '&longitude=' + rLong + '&radius=5000', {
                      zipcode + '<br>Phone : ' + 
                      phone + '<br>Rating : ' + 
                      rating + ' with ' + 
-                     reviewcount + ' reviews. <br> Website: <a href="' +
+                     reviewcount + ' reviews. <br> Website: <a target="_blank" href="' +
                      rUrl + '">Click here</a></div>');
            });
 
