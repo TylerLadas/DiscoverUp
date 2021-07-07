@@ -13,7 +13,7 @@ let cityValue;
 function lookUp(city) {
 
 
-var apiEvent = 'https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events.json?size=5&';
+var apiEvent = 'https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events.json?size=20&';
 var eApiKey  = 'LVPi9sXqgdQ58cdxQJV9G5220uffRerh';
 
 fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey) 
