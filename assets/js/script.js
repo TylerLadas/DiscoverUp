@@ -79,7 +79,7 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
                   eVenue + ' at ' +
                   eAddress + '<br> Description: <p id="sInfo" style="text-indent: 15px;">' +
                   eInfo + ' </p><a href="' +
-                  eUrl +'"> More Info. </a> <button onclick="restoTrigger()" id="a' +
+                  eUrl +'"> More Info. </a> <br><button onclick="restoTrigger()" id="a' +
                   eId + '">Find Nearby Establishments.</button><br></br></div>');
        
           });
@@ -188,7 +188,7 @@ function handler(event) {
     $('#responseEvents').html("");
     $('#responseRestos').html("");
     eventHead.style.display = "flex";
-    restaurantHead.style.display = "none";
+    restaurantHead.style.display = "";
     cityValue = $(this).val();
     lookUp(cityValue);
 }
