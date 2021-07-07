@@ -56,6 +56,11 @@
     border-radius: 0.5rem;
 }
 
+.modal-content h1 {
+    color: white;
+    font-weight: bold;
+}
+
 .close-button {
     float: right;
     width: 1.5rem;
@@ -63,8 +68,7 @@
     text-align: center;
     cursor: pointer;
     border-radius: 0.25rem;
-    color: var(--color-primary);
-    ;
+    color: white;
 }
 
 .close-button:hover {
