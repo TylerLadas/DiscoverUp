@@ -48,39 +48,50 @@
         </div>
     </div>
 
-    <!-- "Event Near You" section -->
-    <div class="flex-auto flex-wrap px-20">
-        <div>
+    <div class="grid grid-cols-5">
+      <div class="col-span-3">
+        <!-- "Event Near You" section -->
+        <div class="flex-auto flex-wrap px-20">
+          <div>
             <h1 id="event-head" class="text-3xl font-bold fuchsia text-center pt-10 pb-2 border-b-4 border-blue-600">Events Near You</h1>
-        </div>
+          </div>
 
-        <!-- "fetched data for Event near you " section -  TicketMAster Response -->
-        <div id="responseEvents">
+          <!-- "fetched data for Event near you " section -  TicketMAster Response -->
+          <div id="responseEvents">
             <ul>
-                <li id="data-events"></li>
+              <li id="data-events"></li>
             </ul>
+          </div>
         </div>
-    </div>
-
-    <!-- "Restuarant Near You " response content layout section -->
-    <div class="flex-auto flex-wrap px-20">
-        <div>
-            <h1 id="restaurant-head" class="text-3xl font-bold text-black text-center pt-10 pb-2 border-b-4 border-green-600">Restaurants Near You</h1>
-        </div>
+      </div>
+      <div class="col-span-2">
+        <!-- "Restuarant Near You " response content layout section -->
+        <div class="flex-auto flex-wrap px-20">
+          <div>
+            <h1 id="restaurant-head" class=" text-3xl font-bold text-black text-center pt-10 pb-2 border-b-4 border-green-600">Restaurants Near Event</h1>
+          </div>
         <!-- "fetched data for Event near you " section -  TicketMAster Response -->
         <div id="responseRestos" class="flex-1">
-            <ul>
-                <li id="data-restuarants"></li>
-            </ul>
-        </div>
+          <ul>
+              <li id="data-restuarants"></li>
+          </ul>
+      </div>
     </div>
 
-    <div class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h1>Please enter a valid City!</h1>
-        </div>
+  <div class="modal">
+      <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h1>Please enter a valid City!</h1>
+      </div>
+  </div>
+
+
+      </div>
     </div>
+
+    
+
+    
 
     <!-- "Testimonial" Title section -->
     <!-- <div>
