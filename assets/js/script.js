@@ -79,7 +79,7 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
                   eVenue + ' at ' +
                   eAddress + '<br> Description: <p id="sInfo" style="text-indent: 15px;">' +
                   eInfo + ' </p><a href="' +
-                  eUrl +'"> More Info. </a> <button onclick="restoTrigger()" id="a' +
+                  eUrl +'"> More Info. </a> <br><button onclick="restoTrigger()" id="a' +
                   eId + '">Find Nearby Establishments.</button><br></br></div>');
        
           });
@@ -99,8 +99,12 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
 function restoTrigger () {
 //
 
-var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?';
-fetch(apiResto + 'latitude=' + rLat + '&longitude=' + rLong + '&radius=20000', {
+// eventHead.style.display = "none";
+// $('#responseEvents').html("");
+restaurantHead.style.display = "flex";
+
+var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=10';
+fetch(apiResto + '&latitude=' + rLat + '&longitude=' + rLong + '&radius=5000', {
     
     headers: {
       'Authorization':'Bearer 6hxmQPOKdlDPYMmYwZG-1Pf3M3WRSDx8fWmaiFrtBOmsgBjLFAlrLjyGgO1hqdBJwixNHpGAUD7y8LXpb371w-zua6t8fkEeYS74i9cKj_UolOYtOHJyw5K7jgTdYHYx',
@@ -184,7 +188,7 @@ function handler(event) {
     $('#responseEvents').html("");
     $('#responseRestos').html("");
     eventHead.style.display = "flex";
-    restaurantHead.style.display = "flex";
+    restaurantHead.style.display = "";
     cityValue = $(this).val();
     lookUp(cityValue);
 }
@@ -212,13 +216,13 @@ searchForm.addEventListener("submit", function(event) {
     event.preventDefault();
     cityValue = citySearch.value;
     if (cityValue === "") {
-        alert("Please enter a city name!")
+        toggleModal();
         return
     }
     $('#responseEvents').html("");
     $('#responseRestos').html("");
     eventHead.style.display = "flex";
-    restaurantHead.style.display = "block";
+    restaurantHead.style.display = "";
     console.log(cityValue);
     lookUp(cityValue);
     setStorage();
@@ -236,4 +240,21 @@ clearBtn.addEventListener('click', function() {
     // insert code to remove html from saved container
     savedContainer.innerHTML = "";
 })
-//};
+
+// modal alert
+
+const modal = document.querySelector(".modal");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+  modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
