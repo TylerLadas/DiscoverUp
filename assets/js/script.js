@@ -13,7 +13,7 @@ let cityValue;
 function lookUp(city) {
 
 
-var apiEvent = 'https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events.json?size=5&';
+var apiEvent = 'https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events.json?size=20&';
 var eApiKey  = 'LVPi9sXqgdQ58cdxQJV9G5220uffRerh';
 
 fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey) 
@@ -25,7 +25,7 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
 
     .then(function(response) {
         //Console logs results from API JSON
-        //console.log(response);
+        console.log(response);
         var totalRes = response.page.size;
         //console.log(totalRes);
         if (totalRes > 0 ){
@@ -37,20 +37,21 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
 
                 //Location
                 var eVenue = item._embedded.venues[0].name;
+                console.log(eVenue);
                 var eAddress = item._embedded.venues[0].address.line1 + ', ' + 
                                item._embedded.venues[0].city.name + ', ' +
                                item._embedded.venues[0].state.stateCode + ', ' +
                                item._embedded.venues[0].postalCode;
 
                 //Pull coordinates: longitude
-                var eLong = item._embedded.venues[0].location.longitude;
-                window.rLong = eLong;
-                console.log(eLong);
+                //var eLong = item._embedded.venues[0].location.longitude;
+                //window.rLong = eLong;
+                //console.log(eLong);
                 
                 //Pull coordinates: latitude
-                var eLat = item._embedded.venues[0].location.latitude;
-                window.rLat = eLat;
-                console.log(eLat);
+                //var eLat = item._embedded.venues[0].location.latitude;
+                //window.rLat = eLat;
+                //console.log(eLat);
                 
                 //Link to booking website
                 var eUrl = item.url;
@@ -79,15 +80,37 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
                   eVenue + ' at ' +
                   eAddress + '<br> Description: <p id="sInfo" style="text-indent: 15px;">' +
                   eInfo + ' </p><a href="' +
-                  eUrl +'"> More Info. </a> <br><button onclick="restoTrigger()" id="a' +
+                  eUrl +'"> More Info. </a> <br><button id="a' +
                   eId + '">Find Nearby Establishments.</button><br></br></div>');
-       
+
+                var aId = "a" + eId;
+                //Reference showing generated unique button id per item
+                console.log('ID', aId);
+                //Pulls coordinates and gobalizes pulled variables only for the event chosen 
+                document.getElementById(aId).addEventListener("click", eCoordinates);
+                function eCoordinates() {
+                    console.log('clickedID: ', aId);
+                    window.rId = aId;
+                    window.scrollTo(0,0);
+                    //Pull coordinates: longitude
+                    var eLong = item._embedded.venues[0].location.longitude;
+                    window.rLong = eLong;
+                    console.log(eLong);
+           
+                    //Pull coordinates: latitude
+                    var eLat = item._embedded.venues[0].location.latitude;
+                    window.rLat = eLat;
+                    console.log(eLat); 
+                    $('#responseRestos').html(""); 
+                    restoTrigger();                 
+                }
+        
           });
 
        
         
         } else {
-        //if totalRes = 0
+        
         $('#responseEvents').append('<div> No event listings in your area at this time. </div>');
         }
         
@@ -96,15 +119,18 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
 
 };  
 
+// Creates a fetch request and displays listing only upon clicking a specific event
 function restoTrigger () {
-//
+
 
 // eventHead.style.display = "none";
 // $('#responseEvents').html("");
 restaurantHead.style.display = "flex";
 
-var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=10';
-fetch(apiResto + '&latitude=' + rLat + '&longitude=' + rLong + '&radius=5000', {
+// Check that list is pulled from clicked event
+console.log('Clicked Event & Coordinates: ', rId, rLat, rLong);
+var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?';
+fetch(apiResto + 'latitude=' + rLat + '&longitude=' + rLong + '&radius=5000', {
     
     headers: {
       'Authorization':'Bearer 6hxmQPOKdlDPYMmYwZG-1Pf3M3WRSDx8fWmaiFrtBOmsgBjLFAlrLjyGgO1hqdBJwixNHpGAUD7y8LXpb371w-zua6t8fkEeYS74i9cKj_UolOYtOHJyw5K7jgTdYHYx',
@@ -119,6 +145,7 @@ fetch(apiResto + '&latitude=' + rLat + '&longitude=' + rLong + '&radius=5000', {
          console.log('resto',response);
          var totalRes = response.total;
          console.log(totalRes);
+         
          if (totalRes > 0 ){
              $.each(response.businesses, function(i, item) {
                  // Store each entry keys into variables
@@ -157,7 +184,7 @@ fetch(apiResto + '&latitude=' + rLat + '&longitude=' + rLong + '&radius=5000', {
  
 };
 
-// Global variables
+
 
 // Array variable
 let searchArray;
