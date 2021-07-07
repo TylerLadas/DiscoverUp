@@ -18,88 +18,88 @@
 <!-- Testing the body property to check the Tailwind framework is responding -->
 
 <body class="bg-gray-900 text-gray-900">
-  <div class="content">
-    <!-- Header Note on Heading section -->
-    <div class=" flex-auto flex-wrap my-auto py-5 bg-gray-900  text-white ">
-        <h1 class="px-3 pb-6 text-4xl font-bold  fuchsia inline ">DiscoverUp</h1>
-        <ul class=" text-right float-right inline space-x-3 pr-2">
-        <!-- <li href="/" class="inline">Testimonials</li> -->
-        <a href="./contact-us .html" class="inline">Contact Us</a>
-      </ul>
-        <h1 class="font-sans  teal font-bold text-4xl px-10 pt-5 text-center pb-5px italic">Find Cool Upcoming Events & Hot Restaurants in Your Area</h1>
-        <p class="py-2 font-sans fuchsia px-5  text-2xl text-center">Search for upcoming shows, music, concerts, events and find popular restaurants near you </p>
-    </div>
+    <div class="content">
+        <!-- Header Note on Heading section -->
+        <div class=" flex-auto flex-wrap my-auto py-5 bg-gray-900  text-white ">
+            <h1 class="px-3 pb-6 text-4xl font-bold  fuchsia inline ">DiscoverUp</h1>
+            <ul class=" text-right float-right inline space-x-3 pr-2">
+                <!-- <li href="/" class="inline">Testimonials</li> -->
+                <a href="./contact-us .html " class="inline font-bold text-2xl pr-5">Contact Us</a>
+            </ul>
+            <h1 class="font-sans  teal font-bold text-4xl px-10 pt-5 text-center pb-5px italic">Find Upcoming Events & Hot New Restaurants in Your Area</h1>
+            <p class="py-2 font-sans fuchsia px-5  text-2xl text-center ">Search for upcoming shows, music, concerts, events and find popular restaurants near you </p>
+        </div>
 
-    <!-- "LOGO and Search bar" section -->
-    <div class=" flex-auto flex-wrap w-100%  bg-white">
-        <h1 class="text-center text-4xl bg-gray-900 py-2">Discover Coming<span class="italic"> Events & Restaurants</span></h1>
-        <div class="flex-auto flex-wrap bg-gray-900 pb-2 pt-2 grid justify-items-center">
-            <form id="searchForm" class=" pr-1 py-1 border-2 rounded-md border-blue-600">
+        <!-- "LOGO and Search bar" section -->
+        <div class=" flex-auto flex-wrap w-100%  bg-white">
+            <h1 class="text-center text-4xl bg-gray-900 py-2">Discover UpComing<span class="italic"> Events & Restaurants</span></h1>
+            <div class="flex-auto flex-wrap bg-gray-900 pb-2 pt-2 grid justify-items-center">
+                <form id="searchForm" class=" pr-1 py-1 border-2 rounded-md border-blue-600">
 
 
-                <input id="searchCity" class="pr-5 px-1" type="text" placeholder="City" name="City">
-                <button id="search" type="submit" class="bg-blue-900 text-black rounded-md px-5 py-1">Search <i class="fa fa-search"></i></button>
-            </form>
-            <div>
-                <h1 class="text-center">Back to:</h1>
-                <div id="savedContainer">
+                    <input id="searchCity" class="pr-5 px-1" type="text" placeholder="City" name="City">
+                    <button id="search" type="submit" class="bg-blue-900 text-black rounded-md px-5 py-1">Search <i class="fa fa-search"></i></button>
+                </form>
+                <div>
+                    <h1 class="text-center">Back to:</h1>
+                    <div id="savedContainer">
+                    </div>
+                    <button id="clearBtn" class="text-center text-black rounded-md px-5 py-1 justify-items-center">Clear All</button>
                 </div>
-                <button id="clearBtn" class="text-center text-black rounded-md px-5 py-1 justify-items-center">Clear All</button>
             </div>
         </div>
-    </div>
 
-    <div class="grid grid-cols-5">
-      <div class="col-span-3">
-        <!-- "Event Near You" section -->
-        <div class="flex-auto flex-wrap px-20">
-          <div>
-            <h1 id="event-head" class="text-3xl font-bold fuchsia text-center pt-10 pb-2 border-b-4 border-blue-600">Events Near You</h1>
-          </div>
+        <div class="grid grid-cols-5">
+            <div class="col-span-3">
+                <!-- "Event Near You" section -->
+                <div class="flex-auto flex-wrap px-20 events">
+                    <div>
+                        <h1 id="event-head" class="text-3xl font-bold fuchsia text-center pt-10 pb-2 border-b-4 border-blue-600">Events Near You</h1>
+                    </div>
 
-          <!-- "fetched data for Event near you " section -  TicketMAster Response -->
-          <div id="responseEvents">
-            <ul>
-              <li id="data-events"></li>
-            </ul>
-          </div>
+                    <!-- "fetched data for Event near you " section -  TicketMAster Response -->
+                    <div id="responseEvents">
+                        <ul>
+                            <li id="data-events"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-2">
+                <!-- "Restuarant Near You " response content layout section -->
+                <div class="flex-auto flex-wrap px-20">
+                    <div>
+                        <h1 id="restaurant-head" class="text-3xl font-bold fuchsia text-center pt-10 pb-2 border-b-4 border-blue-600">Restaurants Near Event</h1>
+                    </div>
+                    <!-- "fetched data for Event near you " section -  TicketMAster Response -->
+                    <div id="responseRestos" class="flex-1">
+                        <ul>
+                            <li id="data-restuarants"></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Please enter a valid City!</h1>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
-      </div>
-      <div class="col-span-2">
-        <!-- "Restuarant Near You " response content layout section -->
-        <div class="flex-auto flex-wrap px-20">
-          <div>
-            <h1 id="restaurant-head" class="text-3xl font-bold fuchsia text-center pt-10 pb-2 border-b-4 border-blue-600">Restaurants Near Event</h1>
-          </div>
-        <!-- "fetched data for Event near you " section -  TicketMAster Response -->
-        <div id="responseRestos" class="flex-1">
-          <ul>
-              <li id="data-restuarants"></li>
-          </ul>
-      </div>
-    </div>
-
-  <div class="modal">
-      <div class="modal-content">
-          <span class="close-button">&times;</span>
-          <h1>Please enter a valid City!</h1>
-      </div>
-  </div>
 
 
-      </div>
-    </div>
 
-    
 
-    
 
-    <!-- "Testimonial" Title section -->
-    <!-- <div>
+        <!-- "Testimonial" Title section -->
+        <!-- <div>
       <h1 class="text-3xl font-bold text-black text-center pt-10 pb-2 border-b-4 border-green-600">Testimonials</h1>
     </div> -->
-    <!-- "Testimonial" grid-->
-    <!-- <div class="grid grid-flow-col grid-cols-3 grid-rows-1 gap-4 p-5">
+        <!-- "Testimonial" grid-->
+        <!-- <div class="grid grid-flow-col grid-cols-3 grid-rows-1 gap-4 p-5">
       <div>
         <p class="border-4 border-green-900 py-8 px-14 text-justify bg-green-900 border-gray-500 rounded-xl">Don't miss the latest from Downtown Ottawa Get free access to exclusive 
         deals, events, news, and more. input input You are agreeing to Parkbench 
@@ -136,7 +136,7 @@
         </p>
       </div>
     </div> -->
-  </div>
+    </div>
     <!-- Footer section -->
     <div id="footer" class="flex-auto flex-wrap my-auto py-5 bg-gray-900  text-white border-2 rounded-md border-green-600">
         <!-- <h1 class="px-3 pb-5 text-3xl font-bold pl-10 fuchsia inline ">Contact Us</h1>
@@ -146,12 +146,12 @@
             <a href="https://www.linkedin.com/in/dennis-de-guzman-13ba8093/" class="font-bold inline no-underline hover:underline">Dennis</a>
             <a href="https://www.linkedin.com/in/thomas-habtemariam-5b5a6832/" class="font-bold inline no-underline hover:underline ">Thomas</a>
         </ul> -->
-            <h1 class="font-bold text-black"> &#169; DiscoverUp 2021 </h1>
+        <h1 class="font-bold text-black"> &#169; DiscoverUp 2021 </h1>
     </div>
-    
-            
-            <!-- <Contact Form -->
-                <!-- <form class="pt-5">
+
+
+    <!-- <Contact Form -->
+    <!-- <form class="pt-5">
         <div class="inline">
         <label for="fname">First Name</label>
         <input class="text-black border-2 rounded-md border-green-600" type="text" id="fname" name="firstname" placeholder="Your name.." >
@@ -181,10 +181,10 @@
       </form>
     </div>  -->
 
-                <!-- Script source file/directory -->
-                <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                <script src="./assets/js/script.js"></script>
+    <!-- Script source file/directory -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
