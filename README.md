@@ -1,7 +1,6 @@
 # DiscoverUp
 
-![Screen Shot 2021-07-06 at 11 09 51 AM](https://user-images.githubusercontent.com/78171259/124624629-0b64c900-de4b-11eb-8752-3794b4669712.png)
-
+![Screen Shot 2021-07-07 at 4 06 38 PM](https://user-images.githubusercontent.com/78171259/124822093-7d1d3f80-df3d-11eb-84ca-54888430159e.png)
 
 ## Purpose
 To build a local event dashboard that will run in the browser and feature dynamically updated HTML and CSS.
