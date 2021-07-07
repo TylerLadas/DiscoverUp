@@ -9,216 +9,187 @@
   <!-- Tailwindscss Imported CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.0.0-insiders.4a070ac/tailwind.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+  <link rel="stylesheet" href="./assets/CSS/style.css">
+
   <title>UpComing Events & Restuarants Near You</title>
 </head>
-
-  <!-- Testing the body property to check the Tailwind framework is responding -->
   <body class="bg-black text-gray-900">
 
     <!-- Header Note on Heading section -->
-    <div class="bg-gray-900">
-      <div class="my-auto py-5">
-        <div class="pb-5">
-          <h1 class="inline px-3  text-3xl font-bold text-green-600  ">DiscoverUp</h1>
-          <ul class="inline text-right float-right text-white ">
-            <li class="inline hover:text-green-600 hidden md:flex pb-2 pr-2"> <a href="#testimonials">Testimonials</a></li>
-            <li class="inline hover:text-green-600 hidden md:flex pb-2 pr-2"> <a href="#contact">Contact Us</a></li>
-            <li class="inline hover:text-green-600 hidden md:flex pr-2"> <a href="/">Help</a></li>
-          </ul> 
-          <div class="md:hidden flex float-right text-white">
-            <button class="mobile-menu-button">
-              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentcolor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-              </svg>
+      <div class="bg-gray-900">
+            <div class="my-auto py-5">
+                <div class="pb-5">
+                            <h1 class="inline px-3  text-3xl font-bold text-green-600  ">
+                              DiscoverUp
+                            </h1>
+                            <ul class="inline text-right float-right text-white ">
+                                <li class="inline hover:text-green-600 hidden md:flex pb-2 pr-2"> 
+                                  <a href="#testimonials">Testimonials</a></li>
+                                <li class="inline hover:text-green-600 hidden md:flex pb-2 pr-2"> 
+                                  <a href="#contact">Contact Us</a></li>
+                                <li class="inline hover:text-green-600 hidden md:flex pr-2"> 
+                                  <a href="/">Help</a>
+                                </li>
+                            </ul> 
+                            <div class="md:hidden flex float-right text-white">
+                                <button class="mobile-menu-button">
+                                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentcolor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                                  </svg>
+                                </button>
+                            </div>
+                            <ul class="mobile-menu hidden md:hidden">
+                                  <li class="block hover:text-green-600 text-white pt-3 pl-20 "> <a href="#testimonials">Testimonials</a></li>
+                                  <li class="block hover:text-green-600 text-white pt-3 pl-20"> <a href="#contact">Contact Us</a></li>
+                                  <li class="block hover:text-green-600 text-white pt-3 pl-20"> <a href="/">Help</a></li>
+                            </ul> 
+                </div>            
+                <div class="font-sans ... text-center italic pb-5">
+                  <p class="md:text-3xl lg:text-yellow  text-white pb-3">Find Cool Upcoming Events & Popular Restuarants in your area</p> 
+                  <p class="hidden: md:text-x text-green-600 italic  text-x ">Get notified with us on upcoming shows, music, concerts, events and also pick hot Restuarants near you  </p>
+                </div>
+            </div>
+      </div>  
+
+    <!-- "Search bar" section -->
+      <div class=" flex-auto flex-wrap w-100%  bg-white">
+            <h1 class=" italic text-center md:text-4xl py-2"><span class="text-4xl">1000+ </span>Events & Hot Restuarants are available !</h1>
+          <div class="flex-auto flex-wrap pb-2 pt-2 grid justify-items-center">
+                <form id="" class=" pr-1 py-1 border-2 rounded-md border-green-600 ">
+                  <input id="city" class=" pr-5 px-1   "type="text" placeholder="Type Your City Here" name="city">
+                  <button class="bg-green-900 hover:bg-yellow-900 rounded-md px-5 py-1">Search</button>
+                </form>
+                <!--Clear section-->
+            <button id="clearBtn" class="block font-bold text-xl flex-1 bg-green-800 hover:bg-yellow-900 rounded-md px-5 py-1 mt-2 justify-items-center">
+              Clear All <!-- Local Storage CLEAR CLEAR CLEAR ALL button goes here -->
             </button>
           </div>
-          <ul class="mobile-menu hidden md:hidden">
-            <li class="block hover:text-green-600 text-white pt-3 pl-20 "> <a href="#testimonials">Testimonials</a></li>
-            <li class="block hover:text-green-600 text-white pt-3 pl-20"> <a href="#contact">Contact Us</a></li>
-            <li class="block hover:text-green-600 text-white pt-3 pl-20"> <a href="/">Help</a></li>
-          </ul> 
-        </div> 
+
+          <!--Search History section-->
+          <div id="savedContainer" class=" bg-white align-center inline text-gray-400 text-xl font-bold pt-2">
+                    <h1 class="inline p-2">
+                    <!-- Local Storage for the saved searches goes here -->
+                    </h1>                     
+            </div>
+                                      
+                 
       </div>
-      <div class="font-sans ... text-center italic pb-5">
-        <p class="md:text-3xl lg:text-yellow  text-white pb-3">Find Cool Upcoming Events & Popular Restuarants in your area</p> 
-        <p class="hidden: md:text-x text-green-600 italic  text-x ">Get notified with us on upcoming shows, music, concerts, events and also pick hot Restuarants near you  </p>
-      </div>
-    </div>  
 
-    <!-- "LOGO and Search bar" section -->
-    <div class=" flex-auto flex-wrap w-100%  bg-white">
-      <h1 class=" italic text-center md:text-4xl py-2"><span class="text-4xl">1000+ </span>Events & Hot Restuarants are available !</h1>
-      <div class="flex-auto flex-wrap pb-2 pt-2 grid justify-items-center">
-        <form id="" class=" pr-1 py-1 border-2 rounded-md border-green-600 ">
-          <input id="city" class=" pr-5 px-1   "type="text" placeholder="Type Your City Here" name="city">
-          Radius:
-          <select id="searchRadius" class="border-2 rounded-md border-green-900" placeholder="Km">
-              <option value="50">Within 50km</option>
-              <option value="20">Within 20km</option>
-              <option value="5">Within 5km</option>
-          </select>
-          <button class="bg-green-900 hover:bg-yellow-900 rounded-md px-5 py-1">Search</button>
-        </form>
-        <div></div>
-      </div>
-    </div>
-
-
-    <!-- Local Storage for the saved searches -->
-    <div id="search-data" class="flex-1">
-      <ul>
-          <li id="search-list" class=""></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- "fetched data for Event near you " section -  TicketMAster Response -->
-  <div id="responseEvents">
-    <ul>
-        <li id="data-events"></li>
-    </ul>
-  </div>
-     
     <!-- "Event Near You" section -->
     <div class="flex-auto flex-wrap px-10">
-      <div>
-        <h1 class="text-4xl font-bold text-white text-center pt-10 pb-2 mb-3 border-b-8 border-green-600">Events Near You</h1>
-      </div>
+          <div>
+            <h1 class="text-4xl font-bold text-white text-center pt-10 pb-2 mb-3 border-b-8 border-green-600">Events Near You</h1>
+          </div>
 
-      <!-- First Event Details -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden mb-3">
-        <div class="md:flex">
-          <div class="md:flex-shrink-0">
-            <img class="h-48 w-full object-cover md:h-full md:w-48" src="assets/images/Event 1.jpeg" alt="Man looking at item at a store">
+          <!-- 1st -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden mb-3">
+            <div class="md:flex">
+              <div class="md:flex-shrink-0">
+                <img class="h-48 w-full object-cover md:h-full md:w-48" src="assets/images/Event 1.jpeg" alt="Man looking at item at a store">
+              </div>
+              <div class="p-8">
+                <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">June 30, 2021 08:45 PM ESTy</div>
+                <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">105 Pond Street, Rockcliff, ON K1r 7S8</a>
+              </div>
+              <div class="p-8">
+                <p class=" inline mt-2 text-gray-500 pr-5 font-bold">The Weekend - Live Performance </p>
+                <button class=" float-right bg-green-800 hover:bg-yellow-900 rounded-md  px-5 py-1">More</button>
+              </div>
+            </div>
           </div>
-          <div class="p-8">
-            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">June 30, 2021 08:45 PM ESTy</div>
-            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">105 Pond Street, Rockcliff, ON K1r 7S8</a>
-          </div>
-          <div class="p-8">
-            <p class=" inline mt-2 text-gray-500 pr-5 font-bold">The Weekend - Live Performance </p>
-            <button class=" float-right bg-green-800 hover:bg-yellow-900 rounded-md  px-5 py-1">More</button>
-          </div>
-        </div>
-      </div>
-    
+        
 
-      <!-- Second Event Details -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden mb-3">
-        <div class="md:flex">
-          <div class="md:flex-shrink-0">
-            <img class="h-48 w-full object-cover md:h-full md:w-48" src="assets/images/Event 2.jpeg" alt="Man looking at item at a store">
+          <!-- 2nd -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden mb-3">
+            <div class="md:flex">
+              <div class="md:flex-shrink-0">
+                <img class="h-48 w-full object-cover md:h-full md:w-48" src="assets/images/Event 2.jpeg" alt="Man looking at item at a store">
+              </div>
+              <div class="p-8">
+                <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">June 30, 2021 08:45 PM ESTy</div>
+                <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">105 Pond Street, Rockcliff, ON K1r 7S8</a>
+              </div>
+              <div class="p-8">
+                <p class=" inline mt-2 text-gray-500 pr-5 font-bold">The Weekend - Live Performance </p>
+                <button class=" float-right bg-green-800 hover:bg-yellow-900 rounded-md  px-5 py-1">More</button>
+              </div>
+            </div>
           </div>
-          <div class="p-8">
-            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">June 30, 2021 08:45 PM ESTy</div>
-            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">105 Pond Street, Rockcliff, ON K1r 7S8</a>
+        
+          
+          <!-- 3rd -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden mb-3">
+            <div class="md:flex">
+              <div class="md:flex-shrink-0">
+                <img class="h-48 w-full object-cover md:h-full md:w-48" src="assets/images/Event 3.jpeg" alt="Man looking at item at a store">
+              </div>
+              <div class="p-8">
+                <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">June 30, 2021 08:45 PM ESTy</div>
+                <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">105 Pond Street, Rockcliff, ON K1r 7S8</a>
+              </div>
+              <div class="p-8">
+                <p class=" inline mt-2 text-gray-500 pr-5 font-bold">The Weekend - Live Performance </p>
+                <button class=" float-right bg-green-800 hover:bg-yellow-900 rounded-md  px-5 py-1">More</button>
+              </div>
+            </div>
           </div>
-          <div class="p-8">
-            <p class=" inline mt-2 text-gray-500 pr-5 font-bold">The Weekend - Live Performance </p>
-            <button class=" float-right bg-green-800 hover:bg-yellow-900 rounded-md  px-5 py-1">More</button>
-          </div>
-        </div>
-      </div>
-    
-      
-      <!-- Third Event Details -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden mb-3">
-        <div class="md:flex">
-          <div class="md:flex-shrink-0">
-            <img class="h-48 w-full object-cover md:h-full md:w-48" src="assets/images/Event 3.jpeg" alt="Man looking at item at a store">
-          </div>
-          <div class="p-8">
-            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">June 30, 2021 08:45 PM ESTy</div>
-            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">105 Pond Street, Rockcliff, ON K1r 7S8</a>
-          </div>
-          <div class="p-8">
-            <p class=" inline mt-2 text-gray-500 pr-5 font-bold">The Weekend - Live Performance </p>
-            <button class=" float-right bg-green-800 hover:bg-yellow-900 rounded-md  px-5 py-1">More</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-      <!-- "fetched data for Event near you " section -  TicketMAster Response -->
-      <div id="responseEvents" class="flex-1">
-        <ul>
-            <li id="data-events"></li>
-        </ul>
-      </div>
     </div>
 
     <!-- "Restuarant Near You " response content layout section -->
     <div class="flex-auto flex-wrap px-20">
-      <div>
-        <h1 class="text-4xl font-bold text-white text-center pt-10 pb-2 border-b-8 border-green-600">Restuarants Near You</h1>
-      </div>
-
-      <!-- 1st restuarant  Details -->
-      <div class="flex space-x-2 pt-5"> 
-        <div class="flex-1 pr-4">
-          <img  class="inline border-4 border-green-900"src="assets/images/R 6.jpeg" alt="">
-        </div>
-        <div class="flex-1 pr-4">
-          <p class="text-green-800 text-x font-bold">105 Pnd Street, K1N 1B1</p>
-          <p class="italic text-indigo-500">Marioat Hotel
-            </p>
-            <button class="bg-green-800 hover:bg-yellow-900  rounded-md px-5 py-1">Menu</button>
-        </div>
-      </div>
-
-
-      <!-- 2nd restuarant Details -->
-      <div class="flex space-x-2 pt-5"> 
-        <div class="flex-1 pr-4">
-          <img  class="  inline border-4 border-green-900"src="assets/images/R 5.jpeg" alt="">
-        </div>
-        <div class="flex-1 pr-4">
-          <p class="text-green-800 text-x font-bold">361 Queen Street, Ottawa, ON K1R 7S8</p>
-          <p class="italic text-indigo-500">The Five
-            </p>
-            <button class="bg-green-800 hover:bg-yellow-900 rounded-md px-5 py-1">Menu</button>
-        </div>
-      </div>
-      
-      <!-- 3rd restuarant Details -->
-      <div class="flex space-x-2 pt-5"> 
-        <div class="flex-1 pr-4">
-          <img  class="  inline border-4 border-green-900"src="assets/images/R 3.jpeg" alt="">
-        </div>
-        <div class="flex-1 pr-4">
-          <p class="text-green-800 text-x font-bold">161 Elgin Street Ottawa,ON K1N 6G7</p>
-          <p class="italic text-indigo-500">The Kitchen
-            </p>
-            <button class="bg-green-800 hover:bg-yellow-900  rounded-md px-5 py-1">Menu</button>
-           
+          <div>
+            <h1 class="text-4xl font-bold text-white text-center pt-10 pb-2 border-b-8 border-green-600">Restuarants Near You</h1>
           </div>
-        
+
+          <!-- 1st R  -->
+          <div class="flex space-x-2 pt-5"> 
+            <div class="flex-1 pr-4">
+              <img  class="inline border-4 border-green-900"src="assets/images/R 6.jpeg" alt="">
+            </div>
+            <div class="flex-1 pr-4">
+              <p class="text-green-800 text-x font-bold">105 Pnd Street, K1N 1B1</p>
+              <p class="italic text-indigo-500">Marioat Hotel
+                </p>
+                <button class="bg-green-800 hover:bg-yellow-900  rounded-md px-5 py-1">Menu</button>
+            </div>
+          </div> 
+
+          <!-- 2nd R -->
+          <div class="flex space-x-2 pt-5"> 
+              <div class="flex-1 pr-4">
+                <img  class="  inline border-4 border-green-900"src="assets/images/R 5.jpeg" alt="">
+              </div>
+              <div class="flex-1 pr-4">
+                <p class="text-green-800 text-x font-bold">361 Queen Street, Ottawa, ON K1R 7S8</p>
+                <p class="italic text-indigo-500">The Five
+                  </p>
+                  <button class="bg-green-800 hover:bg-yellow-900 rounded-md px-5 py-1">Menu</button>
+              </div>
+          </div> 
+          
+          <!-- 3rd R -->
+          <div class="flex space-x-2 pt-5"> 
+              <div class="flex-1 pr-4">
+                <img  class="  inline border-4 border-green-900"src="assets/images/R 3.jpeg" alt="">
+              </div>
+              <div class="flex-1 pr-4">
+                <p class="text-green-800 text-x font-bold">
+                  161 Elgin Street Ottawa,ON K1N 6G7
+                </p>
+                <p class="italic text-indigo-500">
+                  The Kitchen
+                </p>
+                <button class="bg-green-800 hover:bg-yellow-900  rounded-md px-5 py-1">
+                  Menu
+                </button>
+              </div>
       </div>
      
-      
-
-      <!-- "fetched data for Event near you " section -  TicketMAster Response -->
-      <div id="responseEvents" class="flex-1">
-        <ul>
-            <li id="data-restuarants"></li>
-        </ul>
-      </div>
-    </div>
-  
-
-
-    <!-- Restart Search here-->  
-    <div class=" sticky top-0 pt-6">
-    <button class="bg-green-900 hover:bg-yellow-900 rounded-md px-5 py-1 ">Reset</button>
-        </div>
-
-  
     <!-- "Testimonial" Title section -->  
     <div class="px-10">
       <h1 id="testimonials" class="text-3xl font-bold text-white text-center pt-10 pb-2 border-b-4 border-green-600">Testimonials</h1>
     </div>
-<!-- "Testimonial" grid-->   
+    <!-- "Testimonial" grid-->   
     <div class="grid grid-flow-col grid-cols-3 grid-rows-1 gap-4 p-5">
         <div class="bg-green-900 rounded-xl shadow-md overflow-hidden mb-3">
           <div class="md:flex">
@@ -269,7 +240,8 @@
     </div>
     
     <!-- Script source file/directory -->
-    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
