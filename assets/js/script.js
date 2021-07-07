@@ -99,7 +99,8 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
                     //Pull coordinates: latitude
                     var eLat = item._embedded.venues[0].location.latitude;
                     window.rLat = eLat;
-                    console.log(eLat);  
+                    console.log(eLat); 
+                    $('#responseRestos').html(""); 
                     restoTrigger();                 
                 }
         
@@ -124,16 +125,11 @@ function restoTrigger () {
 // eventHead.style.display = "none";
 // $('#responseEvents').html("");
 restaurantHead.style.display = "flex";
-<<<<<<< HEAD
+
 // Check that list is pulled from clicked event
 console.log('Clicked Event & Coordinates: ', rId, rLat, rLong);
 var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?';
 fetch(apiResto + 'latitude=' + rLat + '&longitude=' + rLong + '&radius=5000', {
-=======
-
-var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=10';
-fetch(apiResto + '&latitude=' + rLat + '&longitude=' + rLong + '&radius=5000', {
->>>>>>> f62adbabb7c04322ae78d8ec08ea519b43e46bdd
     
     headers: {
       'Authorization':'Bearer 6hxmQPOKdlDPYMmYwZG-1Pf3M3WRSDx8fWmaiFrtBOmsgBjLFAlrLjyGgO1hqdBJwixNHpGAUD7y8LXpb371w-zua6t8fkEeYS74i9cKj_UolOYtOHJyw5K7jgTdYHYx',
