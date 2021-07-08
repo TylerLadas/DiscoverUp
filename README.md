@@ -3,8 +3,8 @@
 ![Screen Shot 2021-07-08 at 10 43 45 AM](https://user-images.githubusercontent.com/78171259/124942285-7a702800-dfd9-11eb-87aa-b9893625e455.png)
 
 # ! IMPORTANT !
-**** Yelp Fusion API requires the use of CORS demo server! Before testing please use the following link to temporarily access the server:<br>
-**** https://cors-anywhere.herokuapp.com/corsdemo 
+** ** Yelp Fusion API requires the use of CORS demo server! Before testing please use the following link to temporarily access the server:<br>
+** ** https://cors-anywhere.herokuapp.com/corsdemo 
 
 
 ## Purpose
