@@ -5,7 +5,7 @@
 # ! IMPORTANT !
  **Yelp Fusion API requires the use of CORS demo server! Before testing please use the following link to temporarily access the server:**<br>
  https://cors-anywhere.herokuapp.com/corsdemo 
-
+*****
 
 ## Purpose
 To build a local event dashboard that will run in the browser and feature dynamically updated HTML and CSS.
