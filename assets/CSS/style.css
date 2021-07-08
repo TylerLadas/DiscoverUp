@@ -94,7 +94,7 @@ img {
     width: 250px;
     height: 280px;
     border-radius: 35px;
-    border-color: teal;
+    border: 4px teal solid;
     margin-left: 100px;
 }
 
