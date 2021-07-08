@@ -94,7 +94,7 @@ img {
     width: 250px;
     height: 280px;
     border-radius: 35px;
-    border-color: teal;
+    border: 4px teal solid;
     margin-left: 100px;
 }
 
@@ -141,4 +141,15 @@ flex-shrink: 0;
 
 .imgHeader {
 background-image: url("/assets/images/Cheers-champagne-glasses.jpg");
+}
+
+#responseRestos button, #responseEvents button {
+    /* width: 100%; */
+    text-align: center;
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 3px 10px;
+    display: block;
+    color: black;
 }
