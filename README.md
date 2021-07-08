@@ -2,7 +2,7 @@
 
 ![Screen Shot 2021-07-08 at 10 43 45 AM](https://user-images.githubusercontent.com/78171259/124942285-7a702800-dfd9-11eb-87aa-b9893625e455.png)
 
-## !IMPORTANT!
+## ! IMPORTANT !
 ***** Yelp Fusion API requires the use of CORS demo server! Before testing please use the following link to temporarily access the server: 
 ***** https://cors-anywhere.herokuapp.com/corsdemo *****  
 *****
@@ -44,7 +44,7 @@ Then I am presented with a cleared local storage and saved events container
 https://tylerladas.github.io/DiscoverUp/
 
 ## Contribution
-by Tyler Ladas, Dennis de Guzman, Thomas Habtemariam , Lakyn Felix
+Tyler Ladas, Dennis de Guzman, Thomas Habtemariam , Lakyn Felix
 
 
 
