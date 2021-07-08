@@ -4,7 +4,7 @@
 
 *****
 ***** Yelp Fusion API requires the use of CORS demo server! Before testing please use the following link to temporarily access the server: 
-      https://cors-anywhere.herokuapp.com/corsdemo *****  
+***** https://cors-anywhere.herokuapp.com/corsdemo *****  
 *****
 
 
