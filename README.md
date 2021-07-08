@@ -1,12 +1,17 @@
 # DiscoverUp
 
-![Screen Shot 2021-07-07 at 4 06 38 PM](https://user-images.githubusercontent.com/78171259/124822093-7d1d3f80-df3d-11eb-84ca-54888430159e.png)
+![Screen Shot 2021-07-08 at 10 43 45 AM](https://user-images.githubusercontent.com/78171259/124942285-7a702800-dfd9-11eb-87aa-b9893625e455.png)
+
+!!!!!
+***** Yelp Fusion API requires the use of CORS demo server! Before testing please use the following link to temporarily access the server: 
+***** https://cors-anywhere.herokuapp.com/corsdemo  
+!!!!!
 
 ## Purpose
 To build a local event dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
 ## User Story
-AS A event goer
+AS AN event goer
 I WANT to see local events and nearby popular restaurants
 SO THAT I can choose an event that interests me and select a nearby restaurant
 
@@ -32,6 +37,7 @@ Then I am presented with a cleared local storage and saved events container
 * Moment.JS
 * Ticketmaster Discovery API
 * Yelp Fusion API
+* Mockplus
 
 ## Website
 https://tylerladas.github.io/DiscoverUp/
