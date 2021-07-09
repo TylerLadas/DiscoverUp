@@ -30,6 +30,10 @@
     color: black;
 }
 
+.savedBtn:hover {
+    color: white;
+}
+
 .btnSearch:hover {
     color:  rgb(228, 89, 181);
 }
