@@ -14,8 +14,7 @@
 .search {
     padding-top: 24px;
     padding-bottom: 12px;
-    border-bottom: 6px teal solid ;
-   
+    border-bottom: 6px teal solid ;   
 }
 
 
@@ -48,9 +47,6 @@
 #clearBtn:hover {
     color:  rgb(228, 89, 181);
 }
-
-
-
 
 #event-head,
 #restaurant-head {
@@ -166,11 +162,9 @@ flex-shrink: 0;
 }
 
 #responseEvents button {
-    /* width: 100%; */
     text-align: center;
     background-color: var(--color-primary);
     border-radius: 5px;
-    /* margin: 10px 0; */
     padding: 3px 10px;
     display: block;
     color: black;
@@ -180,11 +174,9 @@ flex-shrink: 0;
 }
 
 #responseRestos button {
-    /* width: 100%; */
     text-align: center;
     background-color: var(--color-primary);
     border-radius: 5px;
-    /* margin: 10px 0; */
     padding: 3px 10px;
     display: block;
     color: black;
