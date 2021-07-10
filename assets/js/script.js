@@ -6,8 +6,6 @@ var clearBtn = document.getElementById("clearBtn");
 var eventHead = document.getElementById("event-head");
 var restaurantHead = document.getElementById("restaurant-head")
 let cityValue;
-// var zipSearch  = document.getElementById('searchZip').value;
-// var offSearch  = document.getElementById('searchRadius').value;
 
 //Execute search api for Events & Restos
 function lookUp(city) {
@@ -24,10 +22,9 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
     })
 
     .then(function(response) {
-        //Console logs results from API JSON
-        console.log(response);
+        
         var totalRes = response.page.size;
-        //console.log(totalRes);
+        
         if (totalRes > 0 ){
             $.each(response._embedded.events, function(i, item) {
                 // Initial response values stored into variables
@@ -37,22 +34,12 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
 
                 //Location
                 var eVenue = item._embedded.venues[0].name;
-                console.log(eVenue);
+                
                 var eAddress = item._embedded.venues[0].address.line1 + ', ' + 
                                item._embedded.venues[0].city.name + ', ' +
                                item._embedded.venues[0].state.stateCode + ', ' +
                                item._embedded.venues[0].postalCode;
 
-                //Pull coordinates: longitude
-                //var eLong = item._embedded.venues[0].location.longitude;
-                //window.rLong = eLong;
-                //console.log(eLong);
-                
-                //Pull coordinates: latitude
-                //var eLat = item._embedded.venues[0].location.latitude;
-                //window.rLat = eLat;
-                //console.log(eLat);
-                
                 //Link to booking website
                 var eUrl = item.url;
                 //Event name
@@ -70,7 +57,7 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
                 }
         
                 // Displaying results in page
-                //console.log(eName[0]);
+                
                 $('#responseEvents').append('<div id="' +
                   eId + '" style="margin-top:50px;margin-bottom:50px;"> <img src="' +
                   eImage + '"style="width:200px;height:150px;"><br>Name: ' +
@@ -85,22 +72,22 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
 
                 var aId = "a" + eId;
                 //Reference showing generated unique button id per item
-                console.log('ID', aId);
+                
                 //Pulls coordinates and gobalizes pulled variables only for the event chosen 
                 document.getElementById(aId).addEventListener("click", eCoordinates);
                 function eCoordinates() {
-                    console.log('clickedID: ', aId);
+                    
                     window.rId = aId;
                     window.scrollTo(0,0);
                     //Pull coordinates: longitude
                     var eLong = item._embedded.venues[0].location.longitude;
                     window.rLong = eLong;
-                    console.log(eLong);
+                    
            
                     //Pull coordinates: latitude
                     var eLat = item._embedded.venues[0].location.latitude;
                     window.rLat = eLat;
-                    console.log(eLat); 
+                     
                     $('#responseRestos').html(""); 
                     restoTrigger();                 
                 }
@@ -122,13 +109,10 @@ fetch(apiEvent + 'city=' + city + '&apikey=' + eApiKey)
 // Creates a fetch request and displays listing only upon clicking a specific event
 function restoTrigger () {
 
-
-// eventHead.style.display = "none";
-// $('#responseEvents').html("");
 restaurantHead.style.display = "flex";
 
 // Check that list is pulled from clicked event
-console.log('Clicked Event & Coordinates: ', rId, rLat, rLong);
+
 var apiResto = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?';
 fetch(apiResto + 'latitude=' + rLat + '&longitude=' + rLong + '&radius=5000', {
     
@@ -141,10 +125,8 @@ fetch(apiResto + 'latitude=' + rLat + '&longitude=' + rLong + '&radius=5000', {
          return response.json();
      })
      .then(function(response) {
-         //Console logs results from API JSON
-         console.log('resto',response);
+         
          var totalRes = response.total;
-         console.log(totalRes);
          
          if (totalRes > 0 ){
              $.each(response.businesses, function(i, item) {
@@ -174,17 +156,12 @@ fetch(apiResto + 'latitude=' + rLat + '&longitude=' + rLong + '&radius=5000', {
                      rating + ' with ' + 
                      reviewcount + ' reviews. <br> <button><a target="_blank" href="' +
                      rUrl + '">Website</a></button></div>');
-           });
-
-           
-         
+           });    
      } 
 
  });   
  
 };
-
-
 
 // Array variable
 let searchArray;
@@ -236,7 +213,7 @@ searchArray.forEach(function(item) {
     createButton(item)
 }); 
 
-// // Event listeners
+// Event listeners
 
 // submit/search button listener
 searchForm.addEventListener("submit", function(event) {
@@ -250,7 +227,6 @@ searchForm.addEventListener("submit", function(event) {
     $('#responseRestos').html("");
     eventHead.style.display = "flex";
     restaurantHead.style.display = "";
-    console.log(cityValue);
     lookUp(cityValue);
     setStorage();
     JSON.parse(localStorage.getItem('saved'))
