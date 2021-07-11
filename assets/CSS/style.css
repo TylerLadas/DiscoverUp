@@ -11,6 +11,13 @@
     color: var(--color-secondary);
 }
 
+.search {
+    padding-top: 24px;
+    padding-bottom: 12px;
+    border-bottom: 6px teal solid ;   
+}
+
+
 .savedBtn {
     width: 100%;
     text-align: center;
@@ -22,9 +29,23 @@
     color: black;
 }
 
+.savedBtn:hover {
+    color: white;
+}
+
+.btnSearch:hover {
+    color:  rgb(228, 89, 181);
+}
+
+
+
 #clearBtn {
     width: 100%;
     border-radius: 5px;
+}
+
+#clearBtn:hover {
+    color:  rgb(228, 89, 181);
 }
 
 #event-head,
@@ -94,8 +115,9 @@ img {
     width: 250px;
     height: 280px;
     border-radius: 35px;
-    border-color: teal;
+    border: 4px teal solid;
     margin-left: 100px;
+    margin-bottom: 5px;
 }
 
 .rounded-md {
@@ -139,6 +161,31 @@ flex: 100 0 auto;
 flex-shrink: 0;
 }
 
-.imgHeader {
-background-image: url("/assets/images/Cheers-champagne-glasses.jpg");
+#responseEvents button {
+    text-align: center;
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    padding: 3px 10px;
+    display: block;
+    color: black;
+}
+#responseEvents button:hover {
+    background-color: rgb(228, 89, 181);
+}
+
+#responseRestos button {
+    text-align: center;
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    padding: 3px 10px;
+    display: block;
+    color: black;
+    margin-top: 10px;
+}
+#responseRestos button:hover {
+    background-color: rgb(228, 89, 181);
+}
+
+.rest {   
+    align-items: center; 
 }
